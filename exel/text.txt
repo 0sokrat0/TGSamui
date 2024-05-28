@@ -1,0 +1,7 @@
+db_config = {
+    'host': '127.0.0.1',
+    'user': 'root',
+    'port': 3306,
+    'password': 'f1s22731S',
+    'database': 'samui_real_estate'
+}
