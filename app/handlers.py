@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import aiomysql
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
@@ -220,7 +221,7 @@ async def show_property_info(callback_query: CallbackQuery, state: FSMContext):
 
     keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
 
-    photos = [property[f'photo{i}'] for i in range(1, 4) if property[f'photo{i}']]
+    photos = [property[f'photo{i}'] for i in range(1, 10) if property[f'photo{i}']]
 
     if photos:
         media = [InputMediaPhoto(media=photos[0], caption=text, parse_mode=ParseMode.HTML)]
@@ -479,7 +480,7 @@ async def get_properties(db, property_type=None, number_of_beds=None, distance_t
     query = f"""
     SELECT property_id, name, location, distance_to_sea, property_type, monthly_price, daily_price,
            booking_deposit_fixed, security_deposit, bedrooms, bathrooms, pool, kitchen, cleaning, description, utility_bill,
-           photo1, photo2, photo3, air_conditioners
+           photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, air_conditioners
     FROM properties
     WHERE (%s IS NULL OR property_type = %s)
     AND (%s IS NULL OR bedrooms = %s)
@@ -525,14 +526,18 @@ async def get_properties(db, property_type=None, number_of_beds=None, distance_t
                     'photo1': row['photo1'],
                     'photo2': row['photo2'],
                     'photo3': row['photo3'],
+                    'photo4': row['photo4'],
+                    'photo5': row['photo5'],
+                    'photo6': row['photo6'],
+                    'photo7': row['photo7'],
+                    'photo8': row['photo8'],
+                    'photo9': row['photo9'],
                     'air_conditioners': row['air_conditioners']
                 }
                 properties.append(property)
 
     return properties
 
-import asyncio
-from aiogram.exceptions import TelegramBadRequest
 
 async def show_property_page(message: Message, state: FSMContext):
     user_data = await state.get_data()
@@ -559,7 +564,7 @@ async def show_property_page(message: Message, state: FSMContext):
             f"📜 <b>Описание:</б> {property['description']}\n"
         ).replace("</б>", "</b>")
 
-        photos = [property[f'photo{i}'] for i in range(1, 4) if property[f'photo{i}']]
+        photos = [property[f'photo{i}'] for i in range(1, 10) if property[f'photo{i}']]
 
         markup = InlineKeyboardMarkup(inline_keyboard=[
             [

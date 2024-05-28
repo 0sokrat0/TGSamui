@@ -58,6 +58,12 @@ class NewProperty(StatesGroup):
     waiting_for_photo1 = State()
     waiting_for_photo2 = State()
     waiting_for_photo3 = State()
+    waiting_for_photo4 = State()
+    waiting_for_photo5 = State()
+    waiting_for_photo6 = State()
+    waiting_for_photo7 = State()
+    waiting_for_photo8 = State()
+    waiting_for_photo9 = State()
     waiting_for_location = State()
     waiting_for_distance_to_sea = State()
     waiting_for_property_type = State()
@@ -113,6 +119,78 @@ async def property_photo2_received(message: Message, state: FSMContext):
 @router.message(NewProperty.waiting_for_photo3)
 async def property_photo3_received(message: Message, state: FSMContext):
     await state.update_data(photo3=message.text)
+    await message.answer("Отправьте ссылку на четвертое фото или напишите /skip для пропуска:")
+    await state.set_state(NewProperty.waiting_for_photo4)
+
+# Обработка пропуска ввода фото
+@router.message(F.text == "/skip")
+async def skip_photo(message: Message, state: FSMContext):
+    current_state = await state.get_state()
+
+    if current_state == NewProperty.waiting_for_photo4:
+        await state.update_data(photo4=None)
+        await message.answer("Отправьте ссылку на пятое фото или напишите /skip для пропуска:")
+        await state.set_state(NewProperty.waiting_for_photo5)
+    elif current_state == NewProperty.waiting_for_photo5:
+        await state.update_data(photo5=None)
+        await message.answer("Отправьте ссылку на шестое фото или напишите /skip для пропуска:")
+        await state.set_state(NewProperty.waiting_for_photo6)
+    elif current_state == NewProperty.waiting_for_photo6:
+        await state.update_data(photo6=None)
+        await message.answer("Отправьте ссылку на седьмое фото или напишите /skip для пропуска:")
+        await state.set_state(NewProperty.waiting_for_photo7)
+    elif current_state == NewProperty.waiting_for_photo7:
+        await state.update_data(photo7=None)
+        await message.answer("Отправьте ссылку на восьмое фото или напишите /skip для пропуска:")
+        await state.set_state(NewProperty.waiting_for_photo8)
+    elif current_state == NewProperty.waiting_for_photo8:
+        await state.update_data(photo8=None)
+        await message.answer("Отправьте ссылку на девятое фото или напишите /skip для пропуска:")
+        await state.set_state(NewProperty.waiting_for_photo9)
+    elif current_state == NewProperty.waiting_for_photo9:
+        await state.update_data(photo9=None)
+        await message.answer("Введите расположение объекта:")
+        await state.set_state(NewProperty.waiting_for_location)
+
+# Ввод четвертого фото
+@router.message(NewProperty.waiting_for_photo4)
+async def property_photo4_received(message: Message, state: FSMContext):
+    await state.update_data(photo4=message.text)
+    await message.answer("Отправьте ссылку на пятое фото или напишите /skip для пропуска:")
+    await state.set_state(NewProperty.waiting_for_photo5)
+
+# Ввод пятого фото
+@router.message(NewProperty.waiting_for_photo5)
+async def property_photo5_received(message: Message, state: FSMContext):
+    await state.update_data(photo5=message.text)
+    await message.answer("Отправьте ссылку на шестое фото или напишите /skip для пропуска:")
+    await state.set_state(NewProperty.waiting_for_photo6)
+
+# Ввод шестого фото
+@router.message(NewProperty.waiting_for_photo6)
+async def property_photo6_received(message: Message, state: FSMContext):
+    await state.update_data(photo6=message.text)
+    await message.answer("Отправьте ссылку на седьмое фото или напишите /skip для пропуска:")
+    await state.set_state(NewProperty.waiting_for_photo7)
+
+# Ввод седьмого фото
+@router.message(NewProperty.waiting_for_photo7)
+async def property_photo7_received(message: Message, state: FSMContext):
+    await state.update_data(photo7=message.text)
+    await message.answer("Отправьте ссылку на восьмое фото или напишите /skip для пропуска:")
+    await state.set_state(NewProperty.waiting_for_photo8)
+
+# Ввод восьмого фото
+@router.message(NewProperty.waiting_for_photo8)
+async def property_photo8_received(message: Message, state: FSMContext):
+    await state.update_data(photo8=message.text)
+    await message.answer("Отправьте ссылку на девятое фото или напишите /skip для пропуска:")
+    await state.set_state(NewProperty.waiting_for_photo9)
+
+# Ввод девятого фото
+@router.message(NewProperty.waiting_for_photo9)
+async def property_photo9_received(message: Message, state: FSMContext):
+    await state.update_data(photo9=message.text)
     await message.answer("Введите расположение объекта:")
     await state.set_state(NewProperty.waiting_for_location)
 
@@ -217,18 +295,49 @@ async def property_utility_bill_received(message: Message, state: FSMContext):
     property_data = await state.get_data()
 
     query = """
-    INSERT INTO properties (name, photo1, photo2, photo3, location, distance_to_sea, property_type,
-                            monthly_price, daily_price, booking_deposit_fixed, security_deposit, bedrooms,
-                            bathrooms, pool, kitchen, cleaning, description, utility_bill)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO properties (name, photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, location, distance_to_sea, property_type,
+                            monthly_price, daily_price, booking_deposit_fixed, security_deposit, bedrooms, bathrooms, pool, kitchen, cleaning, description, utility_bill)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     params = (
-        property_data['name'], property_data['photo1'], property_data['photo2'], property_data['photo3'],
-        property_data['location'], property_data['distance_to_sea'], property_data['property_type'],
-        property_data['monthly_price'], property_data['daily_price'], property_data['booking_deposit_fixed'],
-        property_data['security_deposit'], property_data['bedrooms'], property_data['bathrooms'],
-        property_data['pool'], property_data['kitchen'], property_data['cleaning'],
-        property_data['description'], property_data['utility_bill']
+        property_data.get('name'), property_data.get('photo1'), property_data.get('photo2'), property_data.get('photo3'),
+        property_data.get('photo4'), property_data.get('photo5'), property_data.get('photo6'), property_data.get('photo7'),
+        property_data.get('photo8'), property_data.get('photo9'), property_data.get('location'), property_data.get('distance_to_sea'),
+        property_data.get('property_type'), property_data.get('monthly_price'), property_data.get('daily_price'),
+        property_data.get('booking_deposit_fixed'), property_data.get('security_deposit'), property_data.get('bedrooms'),
+        property_data.get('bathrooms'), property_data.get('pool'), property_data.get('kitchen'),
+        property_data.get('cleaning'), property_data.get('description'), property_data.get('utility_bill')
+    )
+
+    async with db.pool.acquire() as conn:
+        async with conn.cursor() as cursor:
+            await cursor.execute(query, params)
+            await conn.commit()
+
+    await message.answer("Карточка недвижимости успешно создана!", reply_markup=admins_panel)
+    await state.clear()
+# Ввод информации об утилитах
+@router.message(NewProperty.waiting_for_utility_bill)
+async def property_utility_bill_received(message: Message, state: FSMContext):
+    await state.update_data(utility_bill=message.text)
+
+    await db.ensure_connection()
+
+    property_data = await state.get_data()
+
+    query = """
+    INSERT INTO properties (name, photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, location, distance_to_sea, property_type,
+                            monthly_price, daily_price, booking_deposit_fixed, security_deposit, bedrooms, bathrooms, pool, kitchen, cleaning, description, utility_bill)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    """
+    params = (
+        property_data.get('name'), property_data.get('photo1'), property_data.get('photo2'), property_data.get('photo3'),
+        property_data.get('photo4'), property_data.get('photo5'), property_data.get('photo6'), property_data.get('photo7'),
+        property_data.get('photo8'), property_data.get('photo9'), property_data.get('location'), property_data.get('distance_to_sea'),
+        property_data.get('property_type'), property_data.get('monthly_price'), property_data.get('daily_price'),
+        property_data.get('booking_deposit_fixed'), property_data.get('security_deposit'), property_data.get('bedrooms'),
+        property_data.get('bathrooms'), property_data.get('pool'), property_data.get('kitchen'),
+        property_data.get('cleaning'), property_data.get('description'), property_data.get('utility_bill')
     )
 
     async with db.pool.acquire() as conn:
@@ -271,8 +380,18 @@ edit_field_buttons = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(text="Название", callback_data="edit_name"),
             InlineKeyboardButton(text="Фото 1", callback_data="edit_photo1"),
-            InlineKeyboardButton(text="Фото 2", callback_data="edit_photo2"),
-            InlineKeyboardButton(text="Фото 3", callback_data="edit_photo3")
+            InlineKeyboardButton(text="Фото 2", callback_data="edit_photo2")
+        ],
+        [
+            InlineKeyboardButton(text="Фото 3", callback_data="edit_photo3"),
+            InlineKeyboardButton(text="Фото 4", callback_data="edit_photo4"),
+            InlineKeyboardButton(text="Фото 5", callback_data="edit_photo5"),
+            InlineKeyboardButton(text="Фото 6", callback_data="edit_photo6")
+        ],
+        [
+            InlineKeyboardButton(text="Фото 7", callback_data="edit_photo7"),
+            InlineKeyboardButton(text="Фото 8", callback_data="edit_photo8"),
+            InlineKeyboardButton(text="Фото 9", callback_data="edit_photo9")
         ],
         [
             InlineKeyboardButton(text="Расположение", callback_data="edit_location"),
@@ -567,13 +686,6 @@ async def send_newsletter_to_user(user_id: int, subject: str, message_text: str,
 
 
 
-@router.message(F.text == "🔔 Уведомления")
-async def manage_notifications(message: Message):
-    await db.ensure_connection()
-    await db.update_last_activity(message.from_user.id)
-
-    response_text = "Выберите, что вы хотите сделать с уведомлениями:"
-    await message.answer(response_text, reply_markup=kb.notification_keyboard)
 
 
 @router.callback_query(F.data == "subscribe_notifications")

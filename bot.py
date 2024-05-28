@@ -22,7 +22,7 @@ dp = Dispatcher()
 # Настройка логирования
 def setup_logging():
     logger = logging.getLogger()
-    logger.setLevel(logging.ERROR)
+    logger.setLevel(logging.INFO)
 
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
