@@ -1,4 +1,4 @@
-TOKEN = "6920884411:AAFjLkYSctRIjFPrWNIqkLCV8oZYjaD2Ju8"
+TOKEN = "6920884411:AAHATvsgJlcQKtzREu-IgDIv9urc519VZdA"
 
 # db_config = {
 #     'host': '127.0.0.1',

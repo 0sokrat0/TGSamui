@@ -11,6 +11,7 @@ from app import handlers, admin
 from config import TOKEN, db_config, ADMINS
 from database.database import Database
 import aiomysql
+import os
 
 # Создание экземпляра базы данных
 db = Database(db_config)
@@ -82,18 +83,14 @@ async def check_new_properties(bot: Bot, db: Database):
                         except Exception as e:
                             logging.error(f"Error sending message to user {user['user_id']}: {e}")
 
-                        # Обновить поле notified для текущей property
-                        update_property_query = "UPDATE properties SET notified = TRUE WHERE property_id = %s"
+                        # Обновить поля notified для всех новых свойств и last_notified для текущего пользователя в одном блоке
+                        update_query = """
+                        UPDATE properties SET notified = TRUE WHERE property_id = %s;
+                        UPDATE users SET last_notified = %s WHERE user_id = %s
+                        """
                         async with db.pool.acquire() as conn:
                             async with conn.cursor() as cursor:
-                                for property in new_properties:
-                                    await cursor.execute(update_property_query, (property['property_id'],))
-                                await conn.commit()
-
-                        update_user_query = "UPDATE users SET last_notified = %s WHERE user_id = %s"
-                        async with db.pool.acquire() as conn:
-                            async with conn.cursor() as cursor:
-                                await cursor.execute(update_user_query, (now, user['user_id']))
+                                await cursor.executemany(update_query, [(property['property_id'], now, user['user_id']) for property in new_properties])
                                 await conn.commit()
 
             await asyncio.sleep(86400)  # Проверять раз в день

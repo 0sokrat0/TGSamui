@@ -7,7 +7,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
-from config import db_config
+from config import db_config, ADMINS
 from database.database import Database
 from aiogram import Router, F, Bot
 from aiogram.enums import ParseMode
@@ -38,16 +38,17 @@ async def send_welcome(message: Message):
                 "Добро пожаловать в нашего Telegram-бота по поиску недвижимости на острове <u><b>Самуи</b></u>! 🌴🏠\n\n"
                 "<b>Я могу помочь вам найти идеальное место для вашего отдыха или проживания на этом прекрасном острове.</b>\n\n"
             )
-            await message.answer(welcome_text, reply_markup=kb.main, parse_mode=ParseMode.HTML)
+            if user_id in ADMINS:
+                await message.answer(welcome_text, reply_markup=kb.admin_main, parse_mode=ParseMode.HTML)
+            else:
+                await message.answer(welcome_text, reply_markup=kb.main, parse_mode=ParseMode.HTML)
         else:
             await message.answer('Пожалуйста, предоставьте ваш номер телефона.', reply_markup=kb.numbers)
     else:
         await db.add_user(user_id, message.from_user.username)
         await message.answer('Регистрация...')
         await message.answer('Пожалуйста, нажмите на кнопку ниже, чтобы отправить ваш номер телефона.', reply_markup=kb.numbers)
-        await message.answer('Вы успешно зарегистрированы. Добро пожаловать!', reply_markup=kb.main)
-
-
+        await message.answer('Вы успешно зарегистрированы. Добро пожаловать!', reply_markup=kb.main if user_id not in ADMINS else kb.admin_main)
 
 
 
@@ -180,7 +181,7 @@ async def show_favorites(message: Message):
     ]
 
     # Добавление кнопки "Возврат в меню"
-    buttons.append([InlineKeyboardButton(text="🔙 Возврат в меню", callback_data="back_to_menu")])
+    buttons.append([InlineKeyboardButton(text="🔙 Возврат в меню", callback_data="back_to_main")])
 
     keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
 
@@ -195,27 +196,35 @@ async def show_property_info(callback_query: CallbackQuery, state: FSMContext):
         await callback_query.answer("Объект не найден.")
         return
 
+    avg_rating = property.get('avg_rating', 'Нет рейтинга')
+    if avg_rating != 'Нет рейтинга':
+        avg_rating = f"⭐ {avg_rating:.1f}"
+
     text = (
-        f"🏠 <b>{property['name']}</b>\n"
+        f"🏠 <b>{property['name']}</b>\n\n"
         f"📍 <b>Расположение:</b> {property['location']}\n"
-        f"🌊 <b>Удаленность от моря:</б> {property['distance_to_sea']}\n"
-        f"🏷️ <b>Категория:</б> {property['property_type']}\n"
-        f"💰 <b>Стоимость в месяц:</б> {property['monthly_price']}\n"
-        f"💰 <b>Стоимость постуточно:</б> {property['daily_price']}\n"
-        f"💵 <b>Залог:</б> {property['booking_deposit_fixed']}\n"
-        f"🔒 <b>Сохраненный депозит:</б> {property['security_deposit']}\n"
-        f"🛏️ <b>Количество спален:</б> {property['bedrooms']}\n"
-        f"🛁 <b>Количество ванных:</б> {property['bathrooms']}\n"
-        f"🏊 <b>Бассейн:</б> {'Да' if property['pool'] else 'Нет'}\n"
+        f"🌊 <b>Удаленность от моря:</b> {property['distance_to_sea']}\n"
+        f"🏷️ <b>Категория:</b> {property['property_type']}\n\n"
+        f"💰 <b>Стоимость в месяц:</b> {property['monthly_price']}฿\n"
+        f"💰 <b>Стоимость постуточно:</b> {property['daily_price']}฿\n"
+        f"💵 <b>Залог:</b> {property['booking_deposit_fixed']}฿\n"
+        f"🔒 <b>Сохраненный депозит:</b> {property['security_deposit']}฿\n\n"
+        f"🛏️ <b>Количество спален:</b> {property['bedrooms']}\n"
+        f"🛁 <b>Количество ванных:</b> {property['bathrooms']}\n"
+        f"🏊 <b>Бассейн:</b> {'Да' if property['pool'] else 'Нет'}\n"
         f"🍴 <b>Кухня:</б> {'Да' if property['kitchen'] else 'Нет'}\n"
-        f"🧹 <b>Уборка:</б> {'Да' if property['cleaning'] else 'Нет'}\n"
-        f"💡 <b>Утилиты:</б> {property['utility_bill']}\n"
-        f"📜 <b>Описание:</б> {property['description']}\n"
+        f"🧹 <b>Уборка:</b> {'Да' if property['cleaning'] else 'Нет'}\n"
+        f"💡 <b>Утилиты:</b> {property['utility_bill']}\n\n"
+        f"📜 <b>Описание:</б> {property['description']}\n\n"
+        f"🌟 <b>Средний рейтинг:</б> {avg_rating}\n"
     ).replace("</б>", "</b>")
 
     buttons = [
-        [InlineKeyboardButton(text="🗑 Удалить из избранного", callback_data=f"del_{property['property_id']}"),
-         InlineKeyboardButton(text="📞 Связаться с менеджером", url="https://t.me/tropicalsamui")],
+        [InlineKeyboardButton(text="📞 Связь с менеджером", url="https://t.me/tropicalsamui")],
+        [InlineKeyboardButton(text="🗑 Удалить", callback_data=f"del_{property['property_id']}"),
+         InlineKeyboardButton(text="🗺 На карте", callback_data=f"map_{property['property_id']}")],
+        [InlineKeyboardButton(text="✍️ Оставить отзыв и рейтинг", callback_data=f"review_{property['property_id']}"),
+         InlineKeyboardButton(text="📖 Читать отзывы и рейтинги", callback_data=f"read_reviews_{property['property_id']}")],
         [InlineKeyboardButton(text="🔙 Возврат к избранным", callback_data="back_to_favorites")]
     ]
 
@@ -239,13 +248,137 @@ async def show_property_info(callback_query: CallbackQuery, state: FSMContext):
     else:
         await callback_query.message.edit_text(text, parse_mode=ParseMode.HTML, reply_markup=keyboard)
 
-async def get_property_by_id(property_id):
-    query = "SELECT * FROM properties WHERE property_id = %s"
+
+
+@router.callback_query(F.data.startswith('map_'))
+async def show_on_map(callback_query: CallbackQuery):
+    property_id = int(callback_query.data.split('_')[1])
+    await db.ensure_connection()
+    query = "SELECT latitude, longitude FROM properties WHERE property_id = %s"
+    params = (property_id,)
     async with db.pool.acquire() as conn:
         async with conn.cursor(aiomysql.DictCursor) as cursor:
-            await cursor.execute(query, (property_id,))
+            await cursor.execute(query, params)
             result = await cursor.fetchone()
-            return result
+
+    if result:
+        latitude, longitude = result['latitude'], result['longitude']
+        if latitude is not None and longitude is not None:
+            openstreetmap_url = f"https://www.openstreetmap.org/?mlat={latitude}&mlon={longitude}#map=18/{latitude}/{longitude}"
+            await callback_query.message.answer(f"Расположение на карте: {openstreetmap_url}")
+        else:
+            await callback_query.message.answer("Координаты для этой недвижимости не указаны.")
+    else:
+        await callback_query.message.answer("Недвижимость с указанным ID не найдена.")
+    await callback_query.answer()
+
+
+class ReviewStates(StatesGroup):
+    waiting_for_review = State()
+    waiting_for_rating = State()
+
+
+@router.callback_query(F.data.startswith('review_'))
+async def start_review(callback_query: CallbackQuery, state: FSMContext):
+    property_id = int(callback_query.data.split('_')[1])
+    await state.update_data(property_id=property_id)
+    await callback_query.message.answer("Пожалуйста, введите ваш отзыв (вы можете использовать эмоджи):")
+    await callback_query.answer()
+    await state.set_state(ReviewStates.waiting_for_review)
+
+@router.message(ReviewStates.waiting_for_review)
+async def process_review(message: Message, state: FSMContext):
+    review_data = await state.get_data()
+    property_id = review_data["property_id"]
+    review = message.text
+    user_id = message.from_user.id
+    username = message.from_user.username
+
+    await db.ensure_connection()
+
+    # Вставка нового отзыва
+    insert_query = "INSERT INTO reviews (property_id, user_id, username, review, created_at) VALUES (%s, %s, %s, %s, NOW())"
+    insert_params = (property_id, user_id, username, review)
+    async with db.pool.acquire() as conn:
+        async with conn.cursor() as cursor:
+            await cursor.execute(insert_query, insert_params)
+            await conn.commit()
+
+    await message.answer("Спасибо за ваш отзыв! Теперь введите ваш рейтинг от 1 до 5 звезд:")
+    await state.set_state(ReviewStates.waiting_for_rating)
+
+@router.message(ReviewStates.waiting_for_rating)
+async def process_rating(message: Message, state: FSMContext):
+    rating = int(message.text)
+    if rating < 1 or rating > 5:
+        await message.answer("Пожалуйста, введите число от 1 до 5.")
+        return
+
+    data = await state.get_data()
+    property_id = data['property_id']
+    user_id = message.from_user.id
+
+    await db.ensure_connection()
+
+    query = """
+    UPDATE reviews
+    SET rating = %s
+    WHERE property_id = %s AND user_id = %s
+    ORDER BY created_at DESC
+    LIMIT 1
+    """
+    params = (rating, property_id, user_id)
+
+    async with db.pool.acquire() as conn:
+        async with conn.cursor() as cursor:
+            await cursor.execute(query, params)
+            await conn.commit()
+
+    await message.answer("Спасибо за ваш рейтинг!", reply_markup=kb.main)
+    await state.clear()
+
+@router.callback_query(F.data.startswith('read_reviews_'))
+async def read_reviews(callback_query: CallbackQuery):
+    property_id = int(callback_query.data.split('_')[2])
+    await db.ensure_connection()
+
+    query_reviews = "SELECT username, review, rating, created_at FROM reviews WHERE property_id = %s"
+    params = (property_id,)
+
+    async with db.pool.acquire() as conn:
+        async with conn.cursor(aiomysql.DictCursor) as cursor:
+            await cursor.execute(query_reviews, params)
+            reviews = await cursor.fetchall()
+
+    if reviews:
+        response = "Отзывы о недвижимости:\n\n"
+        for review in reviews:
+            rating = review['rating'] if review['rating'] is not None else 0
+            stars = '★' * rating + '☆' * (5 - rating)
+            response += f"@{review['username']} ({review['created_at']}):\n{review['review']}\nРейтинг: {stars}\n\n"
+    else:
+        response = "Нет отзывов для данной недвижимости."
+
+    await callback_query.message.answer(response)
+    await callback_query.answer()
+
+
+async def get_property_by_id(property_id):
+    query_property = "SELECT * FROM properties WHERE property_id = %s"
+    query_rating = "SELECT AVG(rating) as avg_rating FROM reviews WHERE property_id = %s"
+
+    async with db.pool.acquire() as conn:
+        async with conn.cursor(aiomysql.DictCursor) as cursor:
+            await cursor.execute(query_property, (property_id,))
+            property = await cursor.fetchone()
+
+            if property:
+                await cursor.execute(query_rating, (property_id,))
+                rating_result = await cursor.fetchone()
+                property['avg_rating'] = rating_result['avg_rating'] if rating_result else None
+
+            return property
+
 
 @router.callback_query(F.data.startswith('fav_'))
 async def add_to_favorites_handler(callback_query: CallbackQuery, state: FSMContext):
@@ -311,6 +444,8 @@ async def remove_from_favorites(user_id, property_id):
 class ProfileUpdate(StatesGroup):
     waiting_for_email = State()
     waiting_for_phone_number = State()
+    confirming_email = State()
+    confirming_phone_number = State()
 
 @router.message(F.text == "👤 Профиль")
 async def show_profile(message: Message):
@@ -325,7 +460,8 @@ async def show_profile(message: Message):
 
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="Обновить Email", callback_data="update_email")],
-            [InlineKeyboardButton(text="Обновить номер телефона", callback_data="update_phone_number")]
+            [InlineKeyboardButton(text="Обновить номер телефона", callback_data="update_phone_number")],
+            [InlineKeyboardButton(text="🔚 Вернуться в главное меню", callback_data="back_to_main")]
         ])
 
         await message.answer(profile_info, parse_mode=ParseMode.HTML, reply_markup=keyboard)
@@ -349,20 +485,48 @@ async def prompt_for_phone_number(callback: CallbackQuery, state: FSMContext):
 
 @router.message(ProfileUpdate.waiting_for_email)
 async def update_email(message: Message, state: FSMContext):
-    if "@" in message.text and "." in message.text:
-        await db.update_user_email(message.from_user.id, message.text)
+    email = message.text
+    if "@" in email and "." in email and len(email) >= 5:
+        await state.update_data(new_email=email)
+        await message.answer(f"Вы хотите обновить email на: {email}? (Да/Нет)")
+        await state.set_state(ProfileUpdate.confirming_email)
+    else:
+        await message.answer("Пожалуйста, введите корректный email (используйте @ и .).")
+
+
+@router.message(ProfileUpdate.confirming_email)
+async def confirm_email_update(message: Message, state: FSMContext):
+    if message.text.lower() == "да":
+        data = await state.get_data()
+        new_email = data['new_email']
+        await db.update_user_email(message.from_user.id, new_email)
         await message.answer("Ваш email был успешно обновлен.", reply_markup=kb.main)
         await state.clear()
     else:
-        await message.answer("Пожалуйста, введите корректный email.")
+        await message.answer("Обновление email отменено.", reply_markup=kb.main)
+        await state.clear()
 
 
 @router.message(F.contact, ProfileUpdate.waiting_for_phone_number)
 async def update_phone_number(message: Message, state: FSMContext):
     phone_number = message.contact.phone_number
-    await db.update_user_phone_number(message.from_user.id, phone_number)
-    await message.answer("Ваш номер телефона был успешно обновлен.", reply_markup=kb.main)
-    await state.clear()
+    await state.update_data(new_phone_number=phone_number)
+    await message.answer(f"Вы хотите обновить номер телефона на: {phone_number}? (Да/Нет)")
+    await state.set_state(ProfileUpdate.confirming_phone_number)
+
+
+@router.message(ProfileUpdate.confirming_phone_number)
+async def confirm_phone_update(message: Message, state: FSMContext):
+    if message.text.lower() == "да":
+        data = await state.get_data()
+        new_phone_number = data['new_phone_number']
+        await db.update_user_phone_number(message.from_user.id, new_phone_number)
+        await message.answer("Ваш номер телефона был успешно обновлен.", reply_markup=kb.main)
+        await state.clear()
+    else:
+        await message.answer("Обновление номера телефона отменено.", reply_markup=kb.main)
+        await state.clear()
+
 
 
 class PropertyFilter(StatesGroup):
@@ -546,33 +710,45 @@ async def show_property_page(message: Message, state: FSMContext):
 
     if properties:
         property = properties[page]
+        avg_rating = property.get('avg_rating', 'Нет рейтинга')
+        if avg_rating != 'Нет рейтинга':
+            avg_rating = f"⭐ {avg_rating:.1f}"
+
         text = (
-            f"🏠 <b>{property['name']}</b>\n"
-            f"📍 <b>Расположение:</б> {property['location']}\n"
-            f"🌊 <b>Удаленность от моря:</б> {property['distance_to_sea']} метров\n"
-            f"🏷️ <b>Категория:</б> {property['property_type']}\n"
-            f"💰 <b>Стоимость в месяц:</б> {property['monthly_price']}฿\n"
-            f"💰 <b>Стоимость постуточно:</б> {property['daily_price']}฿\n"
-            f"💵 <b>Залог:</б> {property['booking_deposit_fixed']}฿\n"
-            f"🔒 <b>Сохраненный депозит:</б> {property['security_deposit']}฿\n"
-            f"🛏️ <b>Количество спален:</б> {property['bedrooms']}\n"
-            f"🛁 <b>Количество ванных:</б> {property['bathrooms']}\n"
-            f"🏊 <b>Бассейн:</б> {'Да' if property['pool'] else 'Нет'}\n"
-            f"🍴 <b>Кухня:</б> {'Да' if property['kitchen'] else 'Нет'}\n"
-            f"🧹 <b>Уборка:</б> {'Да' if property['cleaning'] else 'Нет'}\n"
-            f"💡 <b>Утилиты:</б> {property['utility_bill']}\n"
-            f"📜 <b>Описание:</б> {property['description']}\n"
+            f"🏠 <b>{property['name']}</b>\n\n"
+        f"📍 <b>Расположение:</b> {property['location']}\n"
+        f"🌊 <b>Удаленность от моря:</b> {property['distance_to_sea']}\n"
+        f"🏷️ <b>Категория:</b> {property['property_type']}\n\n"
+        f"💰 <b>Стоимость в месяц:</b> {property['monthly_price']}฿\n"
+        f"💰 <b>Стоимость постуточно:</b> {property['daily_price']}฿\n"
+        f"💵 <b>Залог:</b> {property['booking_deposit_fixed']}฿\n"
+        f"🔒 <b>Сохраненный депозит:</b> {property['security_deposit']}฿\n\n"
+        f"🛏️ <b>Количество спален:</b> {property['bedrooms']}\n"
+        f"🛁 <b>Количество ванных:</b> {property['bathrooms']}\n"
+        f"🏊 <b>Бассейн:</b> {'Да' if property['pool'] else 'Нет'}\n"
+        f"🍴 <b>Кухня:</б> {'Да' if property['kitchen'] else 'Нет'}\n"
+        f"🧹 <b>Уборка:</b> {'Да' if property['cleaning'] else 'Нет'}\n"
+        f"💡 <b>Утилиты:</b> {property['utility_bill']}\n\n"
+        f"📜 <b>Описание:</б> {property['description']}\n\n"
+        f"🌟 <b>Средний рейтинг:</б> {avg_rating}\n"
         ).replace("</б>", "</b>")
 
         photos = [property[f'photo{i}'] for i in range(1, 10) if property[f'photo{i}']]
 
         markup = InlineKeyboardMarkup(inline_keyboard=[
             [
-                InlineKeyboardButton(text="⬅️ Предыдущая страница", callback_data="prev_page"),
-                InlineKeyboardButton(text="Следующая  страница ➡️", callback_data="next_page")
+                InlineKeyboardButton(text="⬅️", callback_data="prev_page"),
+                InlineKeyboardButton(text="❤️", callback_data=f"fav_{property['id']}"),
+                InlineKeyboardButton(text="➡️", callback_data="next_page")
             ],
             [
-                InlineKeyboardButton(text="❤️ Добавить в избранное", callback_data=f"fav_{property['id']}")
+                InlineKeyboardButton(text="🗺 Показать на карте", callback_data=f"map_{property['id']}")
+            ],
+            [
+                InlineKeyboardButton(text="📖 Читать отзывы и рейтинг", callback_data=f"read_reviews_{property['id']}")
+            ],
+            [
+                InlineKeyboardButton(text="🔚 Возврат в меню", callback_data="back_to_main")
             ]
         ])
 
@@ -705,7 +881,7 @@ async def add_to_favorites(user_id, property_id):
 @router.message(F.text == "🔔 Уведомления")
 async def manage_notifications(message: Message):
     await db.update_last_activity(message.from_user.id)
-    response_text = "Выберите, что вы хотите сделать с уведомлениями:"
+    response_text = "Выберите, пункт меню:"
     await message.answer(response_text, reply_markup=kb.notification_keyboard)
 
 @router.callback_query(F.data == "subscribe_notifications")
@@ -726,3 +902,40 @@ async def unsubscribe_notifications(callback_query: CallbackQuery):
     await callback_query.message.answer("Вы успешно отписаны от уведомлений.", reply_markup=kb.main)
     await callback_query.answer()
 
+@router.callback_query(F.data == 'back_to_main')
+async def back_to_main(callback_query: CallbackQuery):
+    await db.update_last_activity(callback_query.from_user.id)
+    await callback_query.message.answer("Вы вернулись в главное меню.", reply_markup=kb.main)
+    await callback_query.answer()
+
+
+@router.message(F.text == "🌟 Лучшие объекты")
+async def show_top_properties(message: Message):
+    await ensure_db_connection()
+
+    query = """
+    SELECT p.property_id, p.name, AVG(r.rating) as avg_rating
+    FROM properties p
+    JOIN reviews r ON p.property_id = r.property_id
+    GROUP BY p.property_id, p.name
+    ORDER BY avg_rating DESC
+    LIMIT 10
+    """
+
+    async with db.pool.acquire() as conn:
+        async with conn.cursor(aiomysql.DictCursor) as cursor:
+            await cursor.execute(query)
+            top_properties = await cursor.fetchall()
+
+    if not top_properties:
+        await message.answer("Нет объектов с отзывами.")
+        return
+
+    buttons = [
+        [InlineKeyboardButton(text=f"{property['name']} - ⭐ {property['avg_rating']:.1f}", callback_data=f"show_{property['property_id']}")]
+        for property in top_properties
+    ]
+    buttons.append([InlineKeyboardButton(text="🔚 Возврат в меню", callback_data="back_to_main")])
+
+    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
+    await message.answer("🌟 Лучшие объекты недвижимости:", reply_markup=keyboard)
