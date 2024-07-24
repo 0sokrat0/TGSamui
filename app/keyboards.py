@@ -1,27 +1,52 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, ReplyKeyboardMarkup, KeyboardButton
 
-main = ReplyKeyboardMarkup(keyboard=
-[
+main = InlineKeyboardMarkup(inline_keyboard=[
     [
-        KeyboardButton(text="🏠 Поиск недвижимости")
+        InlineKeyboardButton(text="🏠 Поиск недвижимости", callback_data="search_property")
     ],
     [
-        KeyboardButton(text="📌 Избранное"),
-        KeyboardButton(text="🌟 Лучшие объекты")
+        InlineKeyboardButton(text="📌 Избранное", callback_data="favorites"),
+        InlineKeyboardButton(text="🌟 Лучшие объекты", callback_data="best_properties")
     ],
     [
-        KeyboardButton(text="👤 Профиль"),
-        KeyboardButton(text="🔔 Уведомления")
+        InlineKeyboardButton(text="👤 Профиль", callback_data="profile"),
+        InlineKeyboardButton(text="🔔 Уведомления", callback_data="notifications")
     ],
     [
-        KeyboardButton(text="🏝️ Наш сайт", web_app=WebAppInfo(url='https://tropicalsamui.com/'))
+        InlineKeyboardButton(text="🏝️ Наш сайт", web_app=WebAppInfo(url='https://tropicalsamui.com/'))
     ]
-],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-    input_field_placeholder='Выберите пункт меню.'
-)
+])
 
+numbers = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="Отправить контакт", callback_data="send_contact")]
+])
+
+notification_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [
+        InlineKeyboardButton(text="🔊 Подписаться на уведомления", callback_data="subscribe_notifications"),
+        InlineKeyboardButton(text="🔈 Отписаться от уведомлений", callback_data="unsubscribe_notifications")
+    ],
+    [
+        InlineKeyboardButton(text="🔚 Вернуться в главное меню", callback_data="back_to_main")
+    ]
+])
+
+admin_main = InlineKeyboardMarkup(inline_keyboard=[
+    [
+        InlineKeyboardButton(text="🏠 Поиск недвижимости", callback_data="search_property")
+    ],
+    [
+        InlineKeyboardButton(text="📌 Избранное", callback_data="favorites"),
+        InlineKeyboardButton(text="🌟 Лучшие объекты", callback_data="best_properties")
+    ],
+    [
+        InlineKeyboardButton(text="👤 Профиль", callback_data="profile"),
+        InlineKeyboardButton(text="🔔 Уведомления", callback_data="notifications")
+    ],
+    [
+        InlineKeyboardButton(text="🏝️ Наш сайт", web_app=WebAppInfo(url='https://tropicalsamui.com/'))
+    ]
+])
 
 numbers = ReplyKeyboardMarkup(
     resize_keyboard=True,
@@ -31,35 +56,9 @@ numbers = ReplyKeyboardMarkup(
     ]
 )
 
-
-
-notification_keyboard = InlineKeyboardMarkup( inline_keyboard=[
-        [InlineKeyboardButton(text="🔊  Подписаться на уведомления", callback_data="subscribe_notifications"),
-         InlineKeyboardButton(text="🔈 Отписаться от уведомлений", callback_data="unsubscribe_notifications")],
-        [InlineKeyboardButton(text="🔚Вернуться в главное меню", callback_data="back_to_main")],
-    ]
-)
-
-admin_main = ReplyKeyboardMarkup(keyboard=[
-    [
-        KeyboardButton(text="🏠 Поиск недвижимости")
-    ],
-    [
-        KeyboardButton(text="📌 Избранное"),
-        KeyboardButton(text="🌟 Лучшие объекты")
-    ],
-    [
-        KeyboardButton(text="👤 Профиль"),
-        KeyboardButton(text="🔔 Уведомления")
-    ],
-    [
-        KeyboardButton(text="🏝️ Наш сайт", web_app=WebAppInfo(url='https://tropicalsamui.com/'))
-    ],
-    [
-        KeyboardButton(text="⚙️ Админ панель")
-    ],
-],
-    resize_keyboard=True,
-    one_time_keyboard=True,
-    input_field_placeholder='Выберите пункт меню.'
+notification_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="🔊  Подписаться на уведомления", callback_data="subscribe_notifications"),
+     InlineKeyboardButton(text="🔈 Отписаться от уведомлений", callback_data="unsubscribe_notifications")],
+    [InlineKeyboardButton(text="🔚Вернуться в главное меню", callback_data="back_to_main")],
+]
 )

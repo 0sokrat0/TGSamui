@@ -1,17 +1,19 @@
-import atexit
 import asyncio
+import atexit
 import logging
 from datetime import datetime, timedelta
 from logging.handlers import RotatingFileHandler
+
+import aiomysql
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from aiogram.exceptions import TelegramBadRequest
+from aiogram_dialog import setup_dialogs
 
-from app import handlers, admin
 from config import TOKEN, db_config, ADMINS
 from database.database import Database
-import aiomysql
-import os
+from handlers import handlers_start, handlers_favorites, handlers_notifications, handlers_search, handlers_profile, \
+    handlers_top_properties
 
 # Создание экземпляра базы данных
 db = Database(db_config)
@@ -19,6 +21,7 @@ db = Database(db_config)
 # Создание бота и диспетчера
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
+
 
 # Настройка логирования
 def setup_logging():
@@ -32,10 +35,11 @@ def setup_logging():
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 
-    file_handler = RotatingFileHandler('bot.log', maxBytes=5*1024*1024, backupCount=2, encoding='utf-8')
+    file_handler = RotatingFileHandler('bot.log', maxBytes=5 * 1024 * 1024, backupCount=2, encoding='utf-8')
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
+
 
 async def notify_admins(message: str):
     for admin_id in ADMINS:
@@ -45,6 +49,7 @@ async def notify_admins(message: str):
             logging.error(f"Failed to send message to admin {admin_id}: {e}")
         except Exception as e:
             logging.exception(f"Failed to send message to admin {admin_id}: {e}")
+
 
 async def check_new_properties(bot: Bot, db: Database):
     while True:
@@ -90,7 +95,9 @@ async def check_new_properties(bot: Bot, db: Database):
                         """
                         async with db.pool.acquire() as conn:
                             async with conn.cursor() as cursor:
-                                await cursor.executemany(update_query, [(property['property_id'], now, user['user_id']) for property in new_properties])
+                                await cursor.executemany(update_query,
+                                                         [(property['property_id'], now, user['user_id']) for property
+                                                          in new_properties])
                                 await conn.commit()
 
             await asyncio.sleep(86400)  # Проверять раз в день
@@ -98,6 +105,7 @@ async def check_new_properties(bot: Bot, db: Database):
         except Exception as e:
             logging.error(f"Error in check_new_properties: {e}")
             await asyncio.sleep(60)  # Подождать минуту перед повторной попыткой
+
 
 async def on_startup(dispatcher: Dispatcher):
     try:
@@ -107,6 +115,7 @@ async def on_startup(dispatcher: Dispatcher):
         await notify_admins(f"Error connecting to the database: {e}")
         raise
 
+
 async def on_shutdown(dispatcher: Dispatcher):
     try:
         await db.disconnect()
@@ -114,8 +123,16 @@ async def on_shutdown(dispatcher: Dispatcher):
         await notify_admins(f"Error disconnecting from the database: {e}")
         raise
 
+
 async def main():
-    dp.include_routers(handlers.router, admin.router)
+    dp.include_routers(handlers_top_properties.router,
+                       handlers_start.router,
+                       handlers_favorites.router,
+                       handlers_notifications.router,
+                       handlers_search.router,
+                       handlers_profile.router
+                       )
+    setup_dialogs(dp)
 
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
@@ -129,11 +146,13 @@ async def main():
         await bot.session.close()
         await db.disconnect()
 
+
 def exit_handler():
     loop = asyncio.get_event_loop()
     loop.run_until_complete(db.disconnect())
     loop.run_until_complete(notify_admins("Bot is shutting down. Please check the system."))
     loop.close()
+
 
 if __name__ == "__main__":
     setup_logging()

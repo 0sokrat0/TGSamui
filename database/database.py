@@ -1,7 +1,9 @@
 # database.py
 import logging
 from datetime import datetime
+
 import aiomysql
+
 
 class Database:
     def __init__(self, db_config):
@@ -40,73 +42,57 @@ class Database:
         if self.pool is None:
             raise Exception("Failed to connect to the database")
 
-    async def add_user(self, user_id, tg_name=None):
+    async def execute_query(self, query, params):
         await self.ensure_connection()
         async with self.pool.acquire() as conn:
             async with conn.cursor() as cursor:
-                query = "INSERT INTO users (user_id, username) VALUES (%s, %s) ON DUPLICATE KEY UPDATE username = %s"
-                await cursor.execute(query, (user_id, tg_name, tg_name))
+                await cursor.execute(query, params)
                 await conn.commit()
+                return cursor
 
-    async def get_user_info(self, user_id):
+    async def fetch_one(self, query, params):
         await self.ensure_connection()
         async with self.pool.acquire() as conn:
             async with conn.cursor() as cursor:
-                query = "SELECT * FROM users WHERE user_id = %s"
-                await cursor.execute(query, (user_id,))
+                await cursor.execute(query, params)
                 return await cursor.fetchone()
 
-    async def add_user_phone_number(self, user_id, phone_number):
+    async def fetch_all(self, query, params):
         await self.ensure_connection()
         async with self.pool.acquire() as conn:
             async with conn.cursor() as cursor:
-                query = "UPDATE users SET phone_number = %s WHERE user_id = %s"
-                await cursor.execute(query, (phone_number, user_id))
-                await conn.commit()
-                return cursor.rowcount > 0
+                await cursor.execute(query, params)
+                return await cursor.fetchall()
+
+    async def add_user(self, user_id, tg_name=None):
+        query = "INSERT INTO users (user_id, username) VALUES (%s, %s) ON DUPLICATE KEY UPDATE username = %s"
+        await self.execute_query(query, (user_id, tg_name, tg_name))
+
+    async def get_user_info(self, user_id):
+        query = "SELECT * FROM users WHERE user_id = %s"
+        return await self.fetch_one(query, (user_id,))
+
+    async def update_user_field(self, user_id, field, value):
+        query = f"UPDATE users SET {field} = %s WHERE user_id = %s"
+        await self.execute_query(query, (value, user_id))
+
+    async def add_user_phone_number(self, user_id, phone_number):
+        return await self.update_user_field(user_id, 'phone_number', phone_number)
 
     async def is_phone_number_registered(self, user_id):
         user_info = await self.get_user_info(user_id)
-        # Проверяем, существует ли запись и не равен ли номер телефона NULL
         return user_info and user_info[3] is not None
 
     async def update_last_login(self, user_id):
-        await self.ensure_connection()
-        now = datetime.now()
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                query = "UPDATE users SET last_login = %s WHERE user_id = %s"
-                await cursor.execute(query, (now, user_id))
-                await conn.commit()
+        await self.update_user_field(user_id, 'last_login', datetime.now())
 
     async def update_last_activity(self, user_id):
-        await self.ensure_connection()
-        now = datetime.now()
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                query = "UPDATE users SET last_activity = %s WHERE user_id = %s"
-                await cursor.execute(query, (now, user_id))
-                await conn.commit()
+        await self.update_user_field(user_id, 'last_activity', datetime.now())
 
     async def update_user_email(self, user_id, email):
-        await self.ensure_connection()
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                query = "UPDATE users SET email = %s WHERE user_id = %s"
-                await cursor.execute(query, (email, user_id))
-                await conn.commit()
+        await self.update_user_field(user_id, 'email', email)
 
-    async def update_user_phone_number(self, user_id, phone_number):
-        await self.ensure_connection()
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                query = "UPDATE users SET phone_number = %s WHERE user_id = %s"
-                await cursor.execute(query, (phone_number, user_id))
-                await conn.commit()
-
-    async def get_properties(db, property_type=None, number_of_beds=None, location=None):
-        await db.ensure_connection()
-
+    async def get_properties(self, property_type=None, number_of_beds=None, location=None):
         query = """
         SELECT property_id, title, location, distance_to_sea, category, monthly_price, daily_price,
                booking_deposit, safety_deposit, bedrooms, bathrooms, pool, kitchen, cleaning, description, utilities
@@ -116,114 +102,35 @@ class Database:
         AND (%s IS NULL OR location = %s)
         """
         params = (property_type, property_type, number_of_beds, number_of_beds, location, location)
-
-        logging.info(f"Executing query: {query}")
-        logging.info(f"With params: {params}")
-
-        async with db.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query, params)
-                result = await cursor.fetchall()
-
-                logging.info(f"Query result: {result}")
-
-                properties = []
-                for row in result:
-                    property = {
-                        'id': row[0],
-                        'name': row[1],
-                        'location': row[2],
-                        'distance_to_sea': row[3],
-                        'category': row[4],
-                        'monthly_price': row[5],
-                        'daily_price': row[6],
-                        'booking_deposit': row[7],
-                        'safety_deposit': row[8],
-                        'bedrooms': row[9],
-                        'bathrooms': row[10],
-                        'pool': row[11],
-                        'kitchen': row[12],
-                        'cleaning': row[13],
-                        'description': row[14],
-                        'utilities': row[15]
-                    }
-                    properties.append(property)
-
-        return properties
+        return await self.fetch_all(query, params)
 
     async def add_property_to_favorites(self, user_id, property_id):
-        await self.ensure_connection()
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                query = "INSERT INTO favorites (user_id, property_id) VALUES (%s, %s)"
-                await cursor.execute(query, (user_id, property_id))
-                await conn.commit()
+        query = "INSERT INTO favorites (user_id, property_id) VALUES (%s, %s)"
+        await self.execute_query(query, (user_id, property_id))
 
-
-
-
-    async def save_notification(self, photo: str, message: str):
-        await self.ensure_connection()
-
+    async def save_notification(self, photo, message):
         query = """
         INSERT INTO newsletters (photo, message, sent_at)
         VALUES (%s, %s, NOW())
         """
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query, (photo, message))
-                await conn.commit()
-                await cursor.execute("SELECT LAST_INSERT_ID()")
-                result = await cursor.fetchone()
-                return result[0]
+        cursor = await self.execute_query(query, (photo, message))
+        await cursor.execute("SELECT LAST_INSERT_ID()")
+        result = await cursor.fetchone()
+        return result[0]
 
-    async def get_notification(self, notification_id: int):
-        await self.ensure_connection()
-        query = """
-           SELECT photo, caption FROM notifications WHERE id = %s
-           """
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query, (notification_id,))
-                result = await cursor.fetchone()
-        return result
+    async def get_notification(self, notification_id):
+        query = "SELECT photo, caption FROM notifications WHERE id = %s"
+        return await self.fetch_one(query, (notification_id,))
 
+    async def subscribe_to_notifications(self, user_id):
+        query = "UPDATE users SET notifications_enabled = TRUE WHERE user_id = %s"
+        await self.execute_query(query, (user_id,))
 
-    async def update_last_activity(self, user_id: int):
-        await self.ensure_connection()
-
-        query = "UPDATE users SET last_activity = NOW() WHERE user_id = %s"
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query, (user_id,))
-                await conn.commit()
-
-    async def subscribe_to_notifications(self, user_id: int):
-        await self.ensure_connection()
-
-        query = """
-           UPDATE users SET notifications_enabled = TRUE WHERE user_id = %s
-           """
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query, (user_id,))
-                await conn.commit()
-
-    async def unsubscribe_from_notifications(self, user_id: int):
-        await self.ensure_connection()
-
-        query = """
-           UPDATE users SET notifications_enabled = FALSE WHERE user_id = %s
-           """
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query, (user_id,))
-                await conn.commit()
-
+    async def unsubscribe_from_notifications(self, user_id):
+        query = "UPDATE users SET notifications_enabled = FALSE WHERE user_id = %s"
+        await self.execute_query(query, (user_id,))
 
     async def get_detailed_user_statistics(self):
-        await self.ensure_connection()
-
         query_total_users = "SELECT COUNT(*) FROM users"
         query_active_users = """
            SELECT COUNT(*)
@@ -236,16 +143,9 @@ class Database:
            WHERE created_at >= NOW() - INTERVAL 1 WEEK
            """
 
-        async with self.pool.acquire() as conn:
-            async with conn.cursor() as cursor:
-                await cursor.execute(query_total_users)
-                total_users = await cursor.fetchone()
-
-                await cursor.execute(query_active_users)
-                active_users = await cursor.fetchone()
-
-                await cursor.execute(query_new_users)
-                new_users = await cursor.fetchone()
+        total_users = await self.fetch_one(query_total_users, ())
+        active_users = await self.fetch_one(query_active_users, ())
+        new_users = await self.fetch_one(query_new_users, ())
 
         return {
             'total_users': total_users[0],
