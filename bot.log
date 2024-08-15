@@ -1,0 +1,821 @@
+2024-08-15 11:39:16,374 - root - INFO - Database connection pool created.
+2024-08-15 11:39:16,375 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:39:17,046 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:39:24,710 - root - INFO - Database connection pool created.
+2024-08-15 11:39:25,379 - aiogram.event - INFO - Update id=674437116 is handled. Duration 671 ms by bot id=6920884411
+2024-08-15 11:39:28,678 - aiogram.event - INFO - Update id=674437117 is handled. Duration 500 ms by bot id=6920884411
+2024-08-15 11:39:30,950 - root - INFO - Database connection pool created.
+2024-08-15 11:39:30,950 - root - INFO - Database connected successfully.
+2024-08-15 11:39:30,952 - root - INFO - Executing query: 
+    SELECT property_id, name, location, distance_to_sea, property_type, monthly_price, daily_price,
+           booking_deposit_fixed, security_deposit, bedrooms, bathrooms, pool, kitchen, cleaning, description, utility_bill,
+           photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, air_conditioners
+    FROM properties
+    WHERE (%s IS NULL OR property_type = %s)
+    AND (%s IS NULL OR bedrooms = %s)
+     AND (monthly_price BETWEEN 100 AND 2000000)
+2024-08-15 11:39:30,952 - root - INFO - With params: (None, None, None, None)
+2024-08-15 11:39:30,955 - root - INFO - Query result: [{'property_id': 1, 'name': 'Colibry Villa', 'location': 'район Банг Као', 'distance_to_sea': '300', 'property_type': 'Вилла', 'monthly_price': '142001', 'daily_price': 5900, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': '1 раз/3 дня\nсо сменой постельного ', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wi-fi бесплатный', 'photo1': 'https://tropicalsamui.com/wp-content/uploads/2015/07/photo_2024-05-18_09-30-02.jpg', 'photo2': 'https://tropicalsamui.com/wp-content/uploads/2015/07/hideaway-pool-2022-2-web-scaled.jpg', 'photo3': 'https://tropicalsamui.com/wp-content/uploads/2015/07/tv-room-1-web-scaled.jpg', 'photo4': 'https://tropicalsamui.com/wp-content/uploads/2015/07/hideaway-living-2-web-scaled.jpg', 'photo5': 'https://tropicalsamui.com/wp-content/uploads/2015/07/interior-2022-2-web-scaled.jpg', 'photo6': 'https://tropicalsamui.com/wp-content/uploads/2015/07/bathroom1-b-web-scaled.jpg', 'photo7': 'https://tropicalsamui.com/wp-content/uploads/2015/07/bathroom1-a-web-scaled.jpg', 'photo8': 'https://tropicalsamui.com/wp-content/uploads/2015/07/photo_2024-05-18_09-30-01-2.jpg', 'photo9': 'да', 'air_conditioners': '3'}, {'property_id': 4, 'name': ' Magic Villa ', 'location': 'район Чонг Мун', 'distance_to_sea': '300 ', 'property_type': 'Вилла', 'monthly_price': '254000', 'daily_price': 9300, 'booking_deposit_fixed': '30', 'security_deposit': 10000, 'bedrooms': 3, 'bathrooms': 3, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': '1 раз/неделю уборка со сменой постельного белья', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода 128 thb, эл-во 7,5thb', 'photo1': 'https://tropicalsamui.com/wp-content/uploads/2024/05/2cc4f06e-0132-4903-9d90-8a4f544f38cc.jpg', 'photo2': 'https://tropicalsamui.com/wp-content/uploads/2024/05/55bb3bfe-40a2-4e63-b80f-2e0b5c4c23dd.jpg', 'photo3': 'https://tropicalsamui.com/wp-content/uploads/2024/05/7a47e6f6-6ab1-4b40-9914-fd32a6a9d6d3.webp', 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '4'}, {'property_id': 5, 'name': 'Obsidian Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '225000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': 20000, 'bedrooms': 3, 'bathrooms': 3, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': '1 раз/неделю уборка со сменой постельного белья', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 7 thb ', 'photo1': 'https://tropicalsamui.com/wp-content/uploads/2024/05/photo_2024-05-17_15-38-41-2.jpg', 'photo2': 'https://tropicalsamui.com/wp-content/uploads/2024/05/photo_2024-05-17_15-39-02-2.jpg', 'photo3': 'https://tropicalsamui.com/wp-content/uploads/2024/05/photo_2024-05-17_15-38-41-3.jpg', 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '4'}, {'property_id': 6, 'name': 'Lotus Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '300', 'property_type': 'Вилла', 'monthly_price': '130000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'каждый день', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и эл-во включены в цену', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 8, 'name': 'Royal Villa', 'location': 'район Липа Ной', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '68000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': 10000, 'bedrooms': 3, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': None, 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '4'}, {'property_id': 9, 'name': 'Topaz Villa', 'location': 'район Ламай', 'distance_to_sea': '300', 'property_type': 'Вилла', 'monthly_price': '68000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': 10000, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 7 thb ', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 15, 'name': 'Diamond Villa', 'location': 'район Биг Будда', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '67000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 8 thb ', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 16, 'name': 'Perfect Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '148000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 8 thb ', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 17, 'name': 'Jungle Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '500', 'property_type': 'Вилла', 'monthly_price': '49500', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'общий бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода 1000 thb, эл-во 9thb', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 18, 'name': 'HOUSE 1', 'location': 'район Бо Пхут', 'distance_to_sea': '500 ', 'property_type': 'Дом в резорте', 'monthly_price': '23000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 1, 'pool': 'общий бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: холодильник,\nгазовая плита,\nмикроволновка,\nчайник', 'utility_bill': 'вода 200 thb, эл-во 8thb', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 22, 'name': 'Villa Secret Garden Villa', 'location': 'район Ламай', 'distance_to_sea': '500', 'property_type': 'Вилла', 'monthly_price': '35000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': None, 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: холодильник,\nгазовая плита,\nмикроволновка\n', 'utility_bill': 'вода беспл, эл-во 7thb', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}]
+2024-08-15 11:39:31,725 - aiogram.event - INFO - Update id=674437118 is handled. Duration 780 ms by bot id=6920884411
+2024-08-15 11:39:34,974 - root - ERROR - Error editing media group: Telegram server says - Bad Request: message to edit not found
+2024-08-15 11:39:35,646 - aiogram.event - INFO - Update id=674437119 is handled. Duration 1672 ms by bot id=6920884411
+2024-08-15 11:39:37,429 - root - ERROR - Error editing media group: Telegram server says - Bad Request: message to edit not found
+2024-08-15 11:39:38,274 - aiogram.event - INFO - Update id=674437120 is handled. Duration 1407 ms by bot id=6920884411
+2024-08-15 11:39:40,050 - root - ERROR - Error editing message: Telegram server says - Bad Request: message to edit not found
+2024-08-15 11:39:40,325 - aiogram.event - INFO - Update id=674437121 is handled. Duration 750 ms by bot id=6920884411
+2024-08-15 11:39:47,928 - aiogram.event - INFO - Update id=674437122 is not handled. Duration 483 ms by bot id=6920884411
+2024-08-15 11:39:47,928 - aiogram.event - ERROR - Cause exception while process update id=674437122 by bot id=6920884411
+TelegramBadRequest: Telegram server says - Bad Request: message to edit not found
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 488, in show_property_details
+    await callback_query.message.edit_text(text, parse_mode=ParseMode.HTML,
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\bot.py", line 508, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message to edit not found
+2024-08-15 11:42:02,416 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 11:42:02,416 - root - INFO - Database connection pool closed.
+2024-08-15 11:42:02,672 - root - INFO - Database connection pool closed.
+2024-08-15 11:42:02,672 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:42:04,160 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 11:48:32,649 - root - INFO - Database connection pool created.
+2024-08-15 11:48:32,649 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:48:33,351 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:48:35,347 - root - INFO - Database connection pool created.
+2024-08-15 11:48:36,057 - aiogram.event - INFO - Update id=674437123 is handled. Duration 703 ms by bot id=6920884411
+2024-08-15 11:48:48,241 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 11:48:48,242 - root - INFO - Database connection pool closed.
+2024-08-15 11:48:48,505 - root - INFO - Database connection pool closed.
+2024-08-15 11:48:48,505 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:48:49,878 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 11:48:52,145 - root - INFO - Database connection pool created.
+2024-08-15 11:48:52,145 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:48:52,719 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:48:52,970 - root - INFO - Database connection pool created.
+2024-08-15 11:48:53,670 - aiogram.event - INFO - Update id=674437124 is handled. Duration 702 ms by bot id=6920884411
+2024-08-15 11:48:57,190 - aiogram.event - INFO - Update id=674437125 is handled. Duration 657 ms by bot id=6920884411
+2024-08-15 11:48:59,605 - root - INFO - Database connection pool created.
+2024-08-15 11:48:59,606 - root - INFO - Database connected successfully.
+2024-08-15 11:48:59,606 - root - INFO - Executing query: 
+    SELECT property_id, name, location, distance_to_sea, property_type, monthly_price, daily_price,
+           booking_deposit_fixed, security_deposit, bedrooms, bathrooms, pool, kitchen, cleaning, description, utility_bill,
+           photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, air_conditioners
+    FROM properties
+    WHERE (%s IS NULL OR property_type = %s)
+    AND (%s IS NULL OR bedrooms = %s)
+     AND (monthly_price BETWEEN 100 AND 2000000)
+2024-08-15 11:48:59,606 - root - INFO - With params: (None, None, None, None)
+2024-08-15 11:48:59,607 - root - INFO - Query result: [{'property_id': 1, 'name': 'Colibry Villa', 'location': 'район Банг Као', 'distance_to_sea': '300', 'property_type': 'Вилла', 'monthly_price': '142001', 'daily_price': 5900, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': '1 раз/3 дня\nсо сменой постельного ', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wi-fi бесплатный', 'photo1': 'https://tropicalsamui.com/wp-content/uploads/2015/07/photo_2024-05-18_09-30-02.jpg', 'photo2': 'https://tropicalsamui.com/wp-content/uploads/2015/07/hideaway-pool-2022-2-web-scaled.jpg', 'photo3': 'https://tropicalsamui.com/wp-content/uploads/2015/07/tv-room-1-web-scaled.jpg', 'photo4': 'https://tropicalsamui.com/wp-content/uploads/2015/07/hideaway-living-2-web-scaled.jpg', 'photo5': 'https://tropicalsamui.com/wp-content/uploads/2015/07/interior-2022-2-web-scaled.jpg', 'photo6': 'https://tropicalsamui.com/wp-content/uploads/2015/07/bathroom1-b-web-scaled.jpg', 'photo7': 'https://tropicalsamui.com/wp-content/uploads/2015/07/bathroom1-a-web-scaled.jpg', 'photo8': 'https://tropicalsamui.com/wp-content/uploads/2015/07/photo_2024-05-18_09-30-01-2.jpg', 'photo9': 'да', 'air_conditioners': '3'}, {'property_id': 4, 'name': ' Magic Villa ', 'location': 'район Чонг Мун', 'distance_to_sea': '300 ', 'property_type': 'Вилла', 'monthly_price': '254000', 'daily_price': 9300, 'booking_deposit_fixed': '30', 'security_deposit': 10000, 'bedrooms': 3, 'bathrooms': 3, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': '1 раз/неделю уборка со сменой постельного белья', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода 128 thb, эл-во 7,5thb', 'photo1': 'https://tropicalsamui.com/wp-content/uploads/2024/05/2cc4f06e-0132-4903-9d90-8a4f544f38cc.jpg', 'photo2': 'https://tropicalsamui.com/wp-content/uploads/2024/05/55bb3bfe-40a2-4e63-b80f-2e0b5c4c23dd.jpg', 'photo3': 'https://tropicalsamui.com/wp-content/uploads/2024/05/7a47e6f6-6ab1-4b40-9914-fd32a6a9d6d3.webp', 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '4'}, {'property_id': 5, 'name': 'Obsidian Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '225000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': 20000, 'bedrooms': 3, 'bathrooms': 3, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': '1 раз/неделю уборка со сменой постельного белья', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 7 thb ', 'photo1': 'https://tropicalsamui.com/wp-content/uploads/2024/05/photo_2024-05-17_15-38-41-2.jpg', 'photo2': 'https://tropicalsamui.com/wp-content/uploads/2024/05/photo_2024-05-17_15-39-02-2.jpg', 'photo3': 'https://tropicalsamui.com/wp-content/uploads/2024/05/photo_2024-05-17_15-38-41-3.jpg', 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '4'}, {'property_id': 6, 'name': 'Lotus Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '300', 'property_type': 'Вилла', 'monthly_price': '130000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'каждый день', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и эл-во включены в цену', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 8, 'name': 'Royal Villa', 'location': 'район Липа Ной', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '68000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': 10000, 'bedrooms': 3, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': None, 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '4'}, {'property_id': 9, 'name': 'Topaz Villa', 'location': 'район Ламай', 'distance_to_sea': '300', 'property_type': 'Вилла', 'monthly_price': '68000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': 10000, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 7 thb ', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 15, 'name': 'Diamond Villa', 'location': 'район Биг Будда', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '67000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 8 thb ', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 16, 'name': 'Perfect Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '500 ', 'property_type': 'Вилла', 'monthly_price': '148000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'приватный бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода и wf бесплатный, эл-во 8 thb ', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 17, 'name': 'Jungle Villa', 'location': 'район Чонг Мун', 'distance_to_sea': '500', 'property_type': 'Вилла', 'monthly_price': '49500', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': 'общий бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: полное оснащение', 'utility_bill': 'вода 1000 thb, эл-во 9thb', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 18, 'name': 'HOUSE 1', 'location': 'район Бо Пхут', 'distance_to_sea': '500 ', 'property_type': 'Дом в резорте', 'monthly_price': '23000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 1, 'pool': 'общий бассейн', 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: холодильник,\nгазовая плита,\nмикроволновка,\nчайник', 'utility_bill': 'вода 200 thb, эл-во 8thb', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}, {'property_id': 22, 'name': 'Villa Secret Garden Villa', 'location': 'район Ламай', 'distance_to_sea': '500', 'property_type': 'Вилла', 'monthly_price': '35000', 'daily_price': None, 'booking_deposit_fixed': None, 'security_deposit': None, 'bedrooms': 2, 'bathrooms': 2, 'pool': None, 'kitchen': 'есть', 'cleaning': 'раз в неделю', 'description': 'кондиционер в каждой комнате, телевизор, техника, WiFi, кухня: холодильник,\nгазовая плита,\nмикроволновка\n', 'utility_bill': 'вода беспл, эл-во 7thb', 'photo1': None, 'photo2': None, 'photo3': None, 'photo4': None, 'photo5': None, 'photo6': None, 'photo7': None, 'photo8': None, 'photo9': None, 'air_conditioners': '3'}]
+2024-08-15 11:49:00,293 - aiogram.event - INFO - Update id=674437126 is handled. Duration 687 ms by bot id=6920884411
+2024-08-15 11:49:13,076 - aiogram.event - INFO - Update id=674437127 is handled. Duration 7578 ms by bot id=6920884411
+2024-08-15 11:49:26,129 - root - INFO - Database connection pool created.
+2024-08-15 11:49:26,130 - aiogram.event - INFO - Update id=674437128 is not handled. Duration 16 ms by bot id=6920884411
+2024-08-15 11:49:26,130 - aiogram.event - ERROR - Cause exception while process update id=674437128 by bot id=6920884411
+OperationalError: (1054, "Unknown column 'latitude' in 'field list'")
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_favorites.py", line 462, in show_on_map
+    await cursor.execute(query, params)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\cursors.py", line 239, in execute
+    await self._query(query)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\cursors.py", line 457, in _query
+    await conn.query(q)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 683, in _read_query_result
+    await result.read()
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 1164, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'latitude' in 'field list'")
+2024-08-15 11:49:30,670 - root - ERROR - Error editing media group: Telegram server says - Bad Request: message to edit not found
+2024-08-15 11:49:31,199 - aiogram.event - INFO - Update id=674437129 is handled. Duration 1532 ms by bot id=6920884411
+2024-08-15 11:49:37,696 - root - INFO - Database connection pool created.
+2024-08-15 11:49:38,184 - aiogram.event - INFO - Update id=674437130 is handled. Duration 483 ms by bot id=6920884411
+2024-08-15 11:54:24,636 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 11:54:24,637 - root - INFO - Database connection pool closed.
+2024-08-15 11:54:24,888 - root - INFO - Database connection pool closed.
+2024-08-15 11:54:24,888 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:54:26,436 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 11:54:28,902 - root - INFO - Database connection pool created.
+2024-08-15 11:54:28,903 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:54:29,544 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:54:34,944 - root - INFO - Database connection pool created.
+2024-08-15 11:54:35,637 - aiogram.event - INFO - Update id=674437131 is handled. Duration 687 ms by bot id=6920884411
+2024-08-15 11:54:36,795 - aiogram.event - INFO - Update id=674437132 is not handled. Duration 0 ms by bot id=6920884411
+2024-08-15 11:54:46,240 - aiogram.event - INFO - Update id=674437133 is not handled. Duration 15 ms by bot id=6920884411
+2024-08-15 11:54:47,811 - aiogram.event - INFO - Update id=674437134 is not handled. Duration 0 ms by bot id=6920884411
+2024-08-15 11:54:50,333 - aiogram.event - INFO - Update id=674437135 is not handled. Duration 15 ms by bot id=6920884411
+2024-08-15 11:55:05,127 - aiogram.event - INFO - Update id=674437136 is not handled. Duration 16 ms by bot id=6920884411
+2024-08-15 11:55:07,141 - root - INFO - Database connection pool created.
+2024-08-15 11:55:07,860 - aiogram.event - INFO - Update id=674437137 is handled. Duration 733 ms by bot id=6920884411
+2024-08-15 11:55:09,992 - root - INFO - Database connection pool created.
+2024-08-15 11:55:10,643 - aiogram.event - INFO - Update id=674437138 is handled. Duration 657 ms by bot id=6920884411
+2024-08-15 11:55:13,377 - root - INFO - Database connection pool created.
+2024-08-15 11:55:13,829 - aiogram.event - INFO - Update id=674437139 is handled. Duration 469 ms by bot id=6920884411
+2024-08-15 11:55:19,033 - aiogram.event - INFO - Update id=674437140 is handled. Duration 546 ms by bot id=6920884411
+2024-08-15 11:56:00,591 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 11:56:00,593 - root - INFO - Database connection pool closed.
+2024-08-15 11:56:00,850 - root - INFO - Database connection pool closed.
+2024-08-15 11:56:00,850 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:56:02,393 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 11:56:04,787 - root - INFO - Database connection pool created.
+2024-08-15 11:56:04,787 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:56:05,381 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:56:11,645 - root - INFO - Database connection pool created.
+2024-08-15 11:56:12,301 - aiogram.event - INFO - Update id=674437141 is handled. Duration 655 ms by bot id=6920884411
+2024-08-15 11:56:13,630 - aiogram.event - INFO - Update id=674437142 is not handled. Duration 16 ms by bot id=6920884411
+2024-08-15 11:57:29,509 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 11:57:29,509 - root - INFO - Database connection pool closed.
+2024-08-15 11:57:29,772 - root - INFO - Database connection pool closed.
+2024-08-15 11:57:29,773 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:57:31,245 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 11:57:33,634 - root - INFO - Database connection pool created.
+2024-08-15 11:57:33,635 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:57:34,314 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:57:34,592 - root - INFO - Database connection pool created.
+2024-08-15 11:57:35,403 - aiogram.event - INFO - Update id=674437143 is handled. Duration 812 ms by bot id=6920884411
+2024-08-15 11:57:36,789 - aiogram.event - INFO - Update id=674437144 is handled. Duration 280 ms by bot id=6920884411
+2024-08-15 11:59:38,193 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 11:59:38,195 - root - INFO - Database connection pool closed.
+2024-08-15 11:59:38,451 - root - INFO - Database connection pool closed.
+2024-08-15 11:59:38,452 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:59:39,933 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 11:59:42,273 - root - INFO - Database connection pool created.
+2024-08-15 11:59:42,274 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 11:59:42,945 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 11:59:43,179 - root - INFO - Database connection pool created.
+2024-08-15 11:59:43,984 - aiogram.event - INFO - Update id=674437145 is handled. Duration 812 ms by bot id=6920884411
+2024-08-15 11:59:45,082 - aiogram.event - INFO - Update id=674437146 is not handled. Duration 15 ms by bot id=6920884411
+2024-08-15 12:00:05,799 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 12:00:05,799 - root - INFO - Database connection pool closed.
+2024-08-15 12:00:06,062 - root - INFO - Database connection pool closed.
+2024-08-15 12:00:06,062 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:00:07,901 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 12:00:10,203 - root - INFO - Database connection pool created.
+2024-08-15 12:00:10,203 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 12:00:10,877 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:00:16,682 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 12:00:16,682 - root - INFO - Database connection pool closed.
+2024-08-15 12:00:16,935 - root - INFO - Database connection pool closed.
+2024-08-15 12:00:16,936 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:00:18,700 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 12:00:18,809 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022331002300>
+2024-08-15 12:00:18,809 - asyncio - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000002233101E090>, 147861.375)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000022331001820>
+2024-08-15 12:00:20,941 - root - INFO - Database connection pool created.
+2024-08-15 12:00:20,941 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 12:00:21,587 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:00:21,807 - root - INFO - Database connection pool created.
+2024-08-15 12:00:22,628 - aiogram.event - INFO - Update id=674437147 is handled. Duration 828 ms by bot id=6920884411
+2024-08-15 12:00:24,060 - aiogram.event - INFO - Update id=674437148 is handled. Duration 312 ms by bot id=6920884411
+2024-08-15 12:00:27,686 - aiogram.event - INFO - Update id=674437149 is handled. Duration 233 ms by bot id=6920884411
+2024-08-15 12:00:29,841 - aiogram.event - INFO - Update id=674437150 is handled. Duration 234 ms by bot id=6920884411
+2024-08-15 12:00:31,845 - aiogram.event - INFO - Update id=674437151 is handled. Duration 312 ms by bot id=6920884411
+2024-08-15 12:00:33,628 - aiogram.event - INFO - Update id=674437152 is handled. Duration 344 ms by bot id=6920884411
+2024-08-15 12:00:34,571 - root - INFO - Database connection pool created.
+2024-08-15 12:00:34,572 - root - INFO - Database connected successfully.
+2024-08-15 12:00:34,881 - aiogram.event - INFO - Update id=674437153 is handled. Duration 312 ms by bot id=6920884411
+2024-08-15 12:03:24,233 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 12:03:24,234 - root - INFO - Database connection pool closed.
+2024-08-15 12:03:24,500 - root - INFO - Database connection pool closed.
+2024-08-15 12:03:24,501 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:03:25,999 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 12:03:28,342 - root - INFO - Database connection pool created.
+2024-08-15 12:03:28,343 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 12:03:29,026 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:03:29,270 - root - INFO - Database connection pool created.
+2024-08-15 12:03:29,986 - aiogram.event - INFO - Update id=674437154 is handled. Duration 717 ms by bot id=6920884411
+2024-08-15 12:03:31,357 - aiogram.event - INFO - Update id=674437155 is handled. Duration 265 ms by bot id=6920884411
+2024-08-15 12:03:35,174 - aiogram.event - INFO - Update id=674437156 is handled. Duration 250 ms by bot id=6920884411
+2024-08-15 12:03:36,950 - aiogram.event - INFO - Update id=674437157 is handled. Duration 266 ms by bot id=6920884411
+2024-08-15 12:03:41,132 - aiogram.event - INFO - Update id=674437158 is handled. Duration 328 ms by bot id=6920884411
+2024-08-15 12:03:43,244 - aiogram.event - INFO - Update id=674437159 is handled. Duration 296 ms by bot id=6920884411
+2024-08-15 12:03:44,569 - aiogram.event - INFO - Update id=674437160 is handled. Duration 375 ms by bot id=6920884411
+2024-08-15 12:03:47,240 - aiogram.event - INFO - Update id=674437161 is handled. Duration 312 ms by bot id=6920884411
+2024-08-15 12:03:49,688 - aiogram.event - INFO - Update id=674437162 is handled. Duration 359 ms by bot id=6920884411
+2024-08-15 12:03:51,777 - aiogram.event - INFO - Update id=674437163 is handled. Duration 266 ms by bot id=6920884411
+2024-08-15 12:03:53,057 - aiogram.event - INFO - Update id=674437164 is handled. Duration 296 ms by bot id=6920884411
+2024-08-15 12:03:54,261 - aiogram.event - INFO - Update id=674437165 is handled. Duration 328 ms by bot id=6920884411
+2024-08-15 12:03:55,464 - aiogram.event - INFO - Update id=674437166 is handled. Duration 344 ms by bot id=6920884411
+2024-08-15 12:03:56,670 - aiogram.event - INFO - Update id=674437167 is handled. Duration 250 ms by bot id=6920884411
+2024-08-15 12:03:57,705 - root - INFO - Database connection pool created.
+2024-08-15 12:03:57,705 - root - INFO - Database connected successfully.
+2024-08-15 12:03:57,708 - aiogram.event - INFO - Update id=674437168 is not handled. Duration 15 ms by bot id=6920884411
+2024-08-15 12:03:57,708 - aiogram.event - ERROR - Cause exception while process update id=674437168 by bot id=6920884411
+OperationalError: (1241, 'Operand should contain 1 column(s)')
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 248, in skip_price_selection
+    await show_results(callback_query, state)
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 212, in show_results
+    properties = await get_properties(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 349, in get_properties
+    await cursor.execute(query, params)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\cursors.py", line 239, in execute
+    await self._query(query)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\cursors.py", line 457, in _query
+    await conn.query(q)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 683, in _read_query_result
+    await result.read()
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 1164, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1241, 'Operand should contain 1 column(s)')
+2024-08-15 12:04:01,167 - aiogram.event - INFO - Update id=674437169 is not handled. Duration 0 ms by bot id=6920884411
+2024-08-15 12:04:01,167 - aiogram.event - ERROR - Cause exception while process update id=674437169 by bot id=6920884411
+OperationalError: (1241, 'Operand should contain 1 column(s)')
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 248, in skip_price_selection
+    await show_results(callback_query, state)
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 212, in show_results
+    properties = await get_properties(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 349, in get_properties
+    await cursor.execute(query, params)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\cursors.py", line 239, in execute
+    await self._query(query)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\cursors.py", line 457, in _query
+    await conn.query(q)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 469, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 683, in _read_query_result
+    await result.read()
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 1164, in read
+    first_packet = await self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiomysql\connection.py", line 652, in _read_packet
+    packet.raise_for_error()
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1241, 'Operand should contain 1 column(s)')
+2024-08-15 12:09:01,138 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-08-15 12:09:01,139 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6920884411)
+2024-08-15 12:09:12,849 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 6920884411)
+2024-08-15 12:24:30,802 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-08-15 12:24:30,802 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6920884411)
+2024-08-15 12:25:02,066 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 6920884411)
+2024-08-15 12:27:13,322 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-08-15 12:27:13,323 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6920884411)
+2024-08-15 12:27:25,031 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 6920884411)
+2024-08-15 12:33:11,150 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 12:33:11,152 - root - INFO - Database connection pool closed.
+2024-08-15 12:33:11,152 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-08-15 12:33:11,152 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6920884411)
+2024-08-15 12:33:11,418 - root - INFO - Database connection pool closed.
+2024-08-15 12:33:11,422 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:33:13,056 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
+2024-08-15 12:33:15,461 - root - INFO - Database connection pool created.
+2024-08-15 12:33:15,461 - aiogram.dispatcher - INFO - Start polling
+2024-08-15 12:33:16,160 - aiogram.dispatcher - INFO - Run polling for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:33:16,373 - root - INFO - Database connection pool created.
+2024-08-15 12:33:17,014 - aiogram.event - INFO - Update id=674437170 is handled. Duration 641 ms by bot id=6920884411
+2024-08-15 12:33:21,631 - aiogram.event - INFO - Update id=674437171 is handled. Duration 250 ms by bot id=6920884411
+2024-08-15 12:33:23,906 - aiogram.event - INFO - Update id=674437172 is not handled. Duration 217 ms by bot id=6920884411
+2024-08-15 12:33:23,907 - aiogram.event - ERROR - Cause exception while process update id=674437172 by bot id=6920884411
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 70, in toggle_type_selection
+    await start_search(callback_query, state)
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 54, in start_search
+    await callback_query.message.edit_text("Выберите тип жилья:", reply_markup=markup)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\bot.py", line 508, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2024-08-15 12:33:26,411 - aiogram.event - INFO - Update id=674437173 is handled. Duration 264 ms by bot id=6920884411
+2024-08-15 12:33:28,709 - aiogram.event - INFO - Update id=674437174 is handled. Duration 297 ms by bot id=6920884411
+2024-08-15 12:33:30,534 - aiogram.event - INFO - Update id=674437175 is handled. Duration 264 ms by bot id=6920884411
+2024-08-15 12:33:32,377 - aiogram.event - INFO - Update id=674437176 is handled. Duration 281 ms by bot id=6920884411
+2024-08-15 12:33:34,040 - aiogram.event - INFO - Update id=674437177 is not handled. Duration 342 ms by bot id=6920884411
+2024-08-15 12:33:34,040 - aiogram.event - ERROR - Cause exception while process update id=674437177 by bot id=6920884411
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 70, in toggle_type_selection
+    await start_search(callback_query, state)
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 54, in start_search
+    await callback_query.message.edit_text("Выберите тип жилья:", reply_markup=markup)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\bot.py", line 508, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2024-08-15 12:33:36,570 - aiogram.event - INFO - Update id=674437178 is handled. Duration 250 ms by bot id=6920884411
+2024-08-15 12:33:39,962 - aiogram.event - INFO - Update id=674437179 is not handled. Duration 281 ms by bot id=6920884411
+2024-08-15 12:33:39,962 - aiogram.event - ERROR - Cause exception while process update id=674437179 by bot id=6920884411
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 186, in process_callback_query
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 77, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\manager\manager_middleware.py", line 52, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram_dialog\context\intent_middleware.py", line 198, in context_saver_middleware
+    result = await handler(event, data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 70, in toggle_type_selection
+    await start_search(callback_query, state)
+  File "D:\PythonBOT\TGSamui\handlers\handlers_search.py", line 54, in start_search
+    await callback_query.message.edit_text("Выберите тип жилья:", reply_markup=markup)
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\bot.py", line 508, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\PythonBOT\TGSamui-main\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2024-08-15 12:33:55,771 - aiogram.dispatcher - INFO - Polling stopped
+2024-08-15 12:33:55,771 - root - INFO - Database connection pool closed.
+2024-08-15 12:33:56,030 - root - INFO - Database connection pool closed.
+2024-08-15 12:33:56,030 - aiogram.dispatcher - INFO - Polling stopped for bot @TropicalSamui_bot id=6920884411 - '🌴 Tropical Samui 🌴'
+2024-08-15 12:33:57,723 - root - ERROR - Failed to send message to admin 7039035890: Telegram server says - Bad Request: chat not found
