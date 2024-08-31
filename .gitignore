@@ -1,0 +1,68 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+*.pyo
+*.pyd
+*.pydrake
+
+# Virtualenv
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+env.bak2/
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/vcs.xml
+.idea/**/modules.xml
+.idea/**/deployment.xml
+.idea/**/gradle.xml
+.idea/**/artifacts/
+.idea/**/libraries/
+.idea/**/flexConfigurations.xml
+.idea/**/liferay/
+.idea/**/sonar.xml
+
+# Logs
+*.log
+logs/
+log/
+*.out
+*.log.*
+
+# Database
+*.sqlite3
+*.db
+*.pdb
+*.sql
+
+
+# Ignore hidden files
+.*
+!.gitignore
+
+# Ignore files related to deployments
+*.swp
+*.swo
+*.swn
+
+# Docker
+*.env
+docker-compose.override.yml
