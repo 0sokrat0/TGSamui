@@ -28,8 +28,8 @@ async def show_top_properties(callback: CallbackQuery):
                [InlineKeyboardButton(text="🔚 Возврат в меню", callback_data="back_to_main")]]
 
     keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    await callback.answer("🌟 Лучшие объекты недвижимости")
-    await callback.message.answer("🌟 Лучшие объекты недвижимости:", reply_markup=keyboard)
+    await callback.answer('🌟 Наши Социальные сети')
+    await callback.message.answer("🌟 Наши Социальные сети", reply_markup=keyboard)
 
 
 @router.callback_query(F.data == 'back_to_main')

@@ -1,0 +1,1032 @@
+[
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "WebAppInfo",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "ReplyKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "KeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InputMediaPhoto",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InputMediaPhoto",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "CallbackQuery",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "aiomysql",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "aiomysql",
+        "description": "aiomysql",
+        "detail": "aiomysql",
+        "documentation": {}
+    },
+    {
+        "label": "Router",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Router",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Router",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Router",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Router",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Router",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Bot",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Dispatcher",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "ParseMode",
+        "importPath": "aiogram.enums",
+        "description": "aiogram.enums",
+        "isExtraImport": true,
+        "detail": "aiogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ParseMode",
+        "importPath": "aiogram.enums",
+        "description": "aiogram.enums",
+        "isExtraImport": true,
+        "detail": "aiogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ParseMode",
+        "importPath": "aiogram.enums",
+        "description": "aiogram.enums",
+        "isExtraImport": true,
+        "detail": "aiogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ParseMode",
+        "importPath": "aiogram.enums",
+        "description": "aiogram.enums",
+        "isExtraImport": true,
+        "detail": "aiogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ParseMode",
+        "importPath": "aiogram.enums",
+        "description": "aiogram.enums",
+        "isExtraImport": true,
+        "detail": "aiogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.fsm.context",
+        "description": "aiogram.fsm.context",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.context",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.fsm.state",
+        "description": "aiogram.fsm.state",
+        "isExtraImport": true,
+        "detail": "aiogram.fsm.state",
+        "documentation": {}
+    },
+    {
+        "label": "app.keyboards",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "ADMINS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "ADMINS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "TOKEN",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "ADMINS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "database.database",
+        "description": "database.database",
+        "isExtraImport": true,
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramBadRequest",
+        "importPath": "aiogram.exceptions",
+        "description": "aiogram.exceptions",
+        "isExtraImport": true,
+        "detail": "aiogram.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramBadRequest",
+        "importPath": "aiogram.exceptions",
+        "description": "aiogram.exceptions",
+        "isExtraImport": true,
+        "detail": "aiogram.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramBadRequest",
+        "importPath": "aiogram.exceptions",
+        "description": "aiogram.exceptions",
+        "isExtraImport": true,
+        "detail": "aiogram.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardBuilder",
+        "importPath": "aiogram.utils.keyboard",
+        "description": "aiogram.utils.keyboard",
+        "isExtraImport": true,
+        "detail": "aiogram.utils.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "CommandStart",
+        "importPath": "aiogram.filters",
+        "description": "aiogram.filters",
+        "isExtraImport": true,
+        "detail": "aiogram.filters",
+        "documentation": {}
+    },
+    {
+        "label": "atexit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "atexit",
+        "description": "atexit",
+        "detail": "atexit",
+        "documentation": {}
+    },
+    {
+        "label": "RotatingFileHandler",
+        "importPath": "logging.handlers",
+        "description": "logging.handlers",
+        "isExtraImport": true,
+        "detail": "logging.handlers",
+        "documentation": {}
+    },
+    {
+        "label": "setup_dialogs",
+        "importPath": "aiogram_dialog",
+        "description": "aiogram_dialog",
+        "isExtraImport": true,
+        "detail": "aiogram_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "handlers_start",
+        "importPath": "handlers",
+        "description": "handlers",
+        "isExtraImport": true,
+        "detail": "handlers",
+        "documentation": {}
+    },
+    {
+        "label": "handlers_favorites",
+        "importPath": "handlers",
+        "description": "handlers",
+        "isExtraImport": true,
+        "detail": "handlers",
+        "documentation": {}
+    },
+    {
+        "label": "handlers_notifications",
+        "importPath": "handlers",
+        "description": "handlers",
+        "isExtraImport": true,
+        "detail": "handlers",
+        "documentation": {}
+    },
+    {
+        "label": "handlers_search",
+        "importPath": "handlers",
+        "description": "handlers",
+        "isExtraImport": true,
+        "detail": "handlers",
+        "documentation": {}
+    },
+    {
+        "label": "handlers_profile",
+        "importPath": "handlers",
+        "description": "handlers",
+        "isExtraImport": true,
+        "detail": "handlers",
+        "documentation": {}
+    },
+    {
+        "label": "\\",
+        "importPath": "handlers",
+        "description": "handlers",
+        "isExtraImport": true,
+        "detail": "handlers",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 5,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "peekOfCode": "main = InlineKeyboardMarkup(inline_keyboard=[\n    [\n        InlineKeyboardButton(text=\"🏠 Поиск недвижимости\", callback_data=\"start_search\")\n    ],\n    [\n        InlineKeyboardButton(text=\"📌 Избранное\", callback_data=\"favorites\"),\n        InlineKeyboardButton(text=\"🌟 Лучшие объекты\", callback_data=\"best_properties\")\n    ],\n    [\n        InlineKeyboardButton(text=\"👤 Профиль\", callback_data=\"profile\"),",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "peekOfCode": "numbers = InlineKeyboardMarkup(inline_keyboard=[\n    [InlineKeyboardButton(text=\"Отправить контакт\", callback_data=\"send_contact\")]\n])\nnotification_keyboard = InlineKeyboardMarkup(inline_keyboard=[\n    [\n        InlineKeyboardButton(text=\"🔊 Подписаться на уведомления\", callback_data=\"subscribe_notifications\"),\n        InlineKeyboardButton(text=\"🔈 Отписаться от уведомлений\", callback_data=\"unsubscribe_notifications\")\n    ],\n    [\n        InlineKeyboardButton(text=\"🔚 Вернуться в главное меню\", callback_data=\"back_to_main\")",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "notification_keyboard",
+        "kind": 5,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "peekOfCode": "notification_keyboard = InlineKeyboardMarkup(inline_keyboard=[\n    [\n        InlineKeyboardButton(text=\"🔊 Подписаться на уведомления\", callback_data=\"subscribe_notifications\"),\n        InlineKeyboardButton(text=\"🔈 Отписаться от уведомлений\", callback_data=\"unsubscribe_notifications\")\n    ],\n    [\n        InlineKeyboardButton(text=\"🔚 Вернуться в главное меню\", callback_data=\"back_to_main\")\n    ]\n])\nadmin_main = InlineKeyboardMarkup(inline_keyboard=[",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "admin_main",
+        "kind": 5,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "peekOfCode": "admin_main = InlineKeyboardMarkup(inline_keyboard=[\n    [\n        InlineKeyboardButton(text=\"🏠 Поиск недвижимости\", callback_data=\"start_search\")\n    ],\n    [\n        InlineKeyboardButton(text=\"📌 Избранное\", callback_data=\"favorites\"),\n        InlineKeyboardButton(text=\"🌟 Лучшие объекты\", callback_data=\"best_properties\")\n    ],\n    [\n        InlineKeyboardButton(text=\"👤 Профиль\", callback_data=\"profile\"),",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "peekOfCode": "numbers = ReplyKeyboardMarkup(\n    resize_keyboard=True,\n    one_time_keyboard=True,\n    keyboard=[  # Указываем список кнопок в конструкторе\n        [KeyboardButton(text=\"Отправить контакт\", request_contact=True)]\n    ]\n)\nnotification_keyboard = InlineKeyboardMarkup(inline_keyboard=[\n    [InlineKeyboardButton(text=\"🔊  Подписаться на уведомления\", callback_data=\"subscribe_notifications\"),\n     InlineKeyboardButton(text=\"🔈 Отписаться от уведомлений\", callback_data=\"unsubscribe_notifications\")],",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "notification_keyboard",
+        "kind": 5,
+        "importPath": "app.keyboards",
+        "description": "app.keyboards",
+        "peekOfCode": "notification_keyboard = InlineKeyboardMarkup(inline_keyboard=[\n    [InlineKeyboardButton(text=\"🔊  Подписаться на уведомления\", callback_data=\"subscribe_notifications\"),\n     InlineKeyboardButton(text=\"🔈 Отписаться от уведомлений\", callback_data=\"unsubscribe_notifications\")],\n    [InlineKeyboardButton(text=\"🔚Вернуться в главное меню\", callback_data=\"back_to_main\")],\n]\n)",
+        "detail": "app.keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "kind": 6,
+        "importPath": "database.database",
+        "description": "database.database",
+        "peekOfCode": "class Database:\n    def __init__(self, db_config):\n        self.db_config = db_config\n        self.pool = None\n    async def connect(self):\n        try:\n            self.pool = await aiomysql.create_pool(\n                host=self.db_config['host'],\n                port=self.db_config['port'],\n                user=self.db_config['user'],",
+        "detail": "database.database",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewStates",
+        "kind": 6,
+        "importPath": "handlers.handlers_favorites",
+        "description": "handlers.handlers_favorites",
+        "peekOfCode": "class ReviewStates(StatesGroup):\n    waiting_for_review = State()\n    waiting_for_rating = State()\n@router.callback_query(F.data.startswith('review_'))\nasync def start_review(callback_query: CallbackQuery, state: FSMContext):\n    property_id = int(callback_query.data.split('_')[1])\n    await state.update_data(property_id=property_id)\n    await callback_query.message.answer(\"Пожалуйста, введите ваш отзыв (вы можете использовать эмоджи):\")\n    await callback_query.answer()\n    await state.set_state(ReviewStates.waiting_for_review)",
+        "detail": "handlers.handlers_favorites",
+        "documentation": {}
+    },
+    {
+        "label": "generate_property_buttons",
+        "kind": 2,
+        "importPath": "handlers.handlers_favorites",
+        "description": "handlers.handlers_favorites",
+        "peekOfCode": "def generate_property_buttons(property):\n    return [\n        [InlineKeyboardButton(text=\"📞 Связь с менеджером\", url=\"https://t.me/tropicalsamui\")],\n        [InlineKeyboardButton(text=\"🗑 Удалить\", callback_data=f\"del_{property['property_id']}\"),\n         InlineKeyboardButton(text=\"🗺 На карте\", callback_data=f\"map_{property['property_id']}\")],\n        [InlineKeyboardButton(text=\"✍️ Оставить отзыв и рейтинг\", callback_data=f\"review_{property['property_id']}\"),\n         InlineKeyboardButton(text=\"📖 Читать отзывы и рейтинги\",\n                              callback_data=f\"read_reviews_{property['property_id']}\")],\n        [InlineKeyboardButton(text=\"🔙 Возврат к избранным\", callback_data=\"back_to_favorites\")]\n    ]",
+        "detail": "handlers.handlers_favorites",
+        "documentation": {}
+    },
+    {
+        "label": "generate_property_text",
+        "kind": 2,
+        "importPath": "handlers.handlers_favorites",
+        "description": "handlers.handlers_favorites",
+        "peekOfCode": "def generate_property_text(property):\n    avg_rating = property.get('avg_rating')\n    if avg_rating is not None:\n        avg_rating = f\"⭐ {avg_rating:.1f}\"\n    else:\n        avg_rating = 'Нет рейтинга'\n    return (\n        f\"🏠 <b>{property['name']}</b>\\n\\n\"\n        f\"📍 <b>Расположение:</b> {property['location']}\\n\"\n        f\"🌊 <b>Удаленность от моря:</b> {property['distance_to_sea']}\\n\"",
+        "detail": "handlers.handlers_favorites",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "handlers.handlers_favorites",
+        "description": "handlers.handlers_favorites",
+        "peekOfCode": "router = Router()\ndb = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Successfully connected to the database.\")\nasync def get_favorite_properties(user_id):\n    query = \"\"\"",
+        "detail": "handlers.handlers_favorites",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "handlers.handlers_favorites",
+        "description": "handlers.handlers_favorites",
+        "peekOfCode": "db = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Successfully connected to the database.\")\nasync def get_favorite_properties(user_id):\n    query = \"\"\"\n    SELECT property1, property2, property3, property4, property5, property6, property7, property8",
+        "detail": "handlers.handlers_favorites",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "handlers.handlers_notifications",
+        "description": "handlers.handlers_notifications",
+        "peekOfCode": "router = Router()\ndb = Database(db_config)\n@router.callback_query(F.data == \"notifications\")\nasync def manage_notifications(callback: CallbackQuery):\n    await db.update_last_activity(callback.message.from_user.id)\n    response_text = \"Выберите, пункт меню:\"\n    await callback.message.answer(response_text, reply_markup=kb.notification_keyboard)\n@router.callback_query(F.data == \"subscribe_notifications\")\nasync def subscribe_notifications(callback_query: CallbackQuery):\n    await db.update_last_activity(callback_query.from_user.id)",
+        "detail": "handlers.handlers_notifications",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "handlers.handlers_notifications",
+        "description": "handlers.handlers_notifications",
+        "peekOfCode": "db = Database(db_config)\n@router.callback_query(F.data == \"notifications\")\nasync def manage_notifications(callback: CallbackQuery):\n    await db.update_last_activity(callback.message.from_user.id)\n    response_text = \"Выберите, пункт меню:\"\n    await callback.message.answer(response_text, reply_markup=kb.notification_keyboard)\n@router.callback_query(F.data == \"subscribe_notifications\")\nasync def subscribe_notifications(callback_query: CallbackQuery):\n    await db.update_last_activity(callback_query.from_user.id)\n    user_id = callback_query.from_user.id",
+        "detail": "handlers.handlers_notifications",
+        "documentation": {}
+    },
+    {
+        "label": "ProfileUpdate",
+        "kind": 6,
+        "importPath": "handlers.handlers_profile",
+        "description": "handlers.handlers_profile",
+        "peekOfCode": "class ProfileUpdate(StatesGroup):\n    waiting_for_email = State()\n    waiting_for_phone_number = State()\n    confirming_email = State()\n    confirming_phone_number = State()\nasync def edit_or_send_message(callback: CallbackQuery, text, reply_markup=None, parse_mode=None):\n    try:\n        await callback.message.edit_text(text, reply_markup=reply_markup, parse_mode=parse_mode)\n    except TelegramBadRequest as e:\n        if \"message is not modified\" not in str(e):",
+        "detail": "handlers.handlers_profile",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "handlers.handlers_profile",
+        "description": "handlers.handlers_profile",
+        "peekOfCode": "router = Router()\ndb = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Database connected successfully.\")\nclass ProfileUpdate(StatesGroup):\n    waiting_for_email = State()",
+        "detail": "handlers.handlers_profile",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "handlers.handlers_profile",
+        "description": "handlers.handlers_profile",
+        "peekOfCode": "db = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Database connected successfully.\")\nclass ProfileUpdate(StatesGroup):\n    waiting_for_email = State()\n    waiting_for_phone_number = State()",
+        "detail": "handlers.handlers_profile",
+        "documentation": {}
+    },
+    {
+        "label": "PropertyFilter",
+        "kind": 6,
+        "importPath": "handlers.handlers_search",
+        "description": "handlers.handlers_search",
+        "peekOfCode": "class PropertyFilter(StatesGroup):\n    choosing_type = State()\n    choosing_district = State()\n    choosing_beds = State()\n    choosing_baths = State()\n    choosing_price = State()\n    showing_results = State()\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()",
+        "detail": "handlers.handlers_search",
+        "documentation": {}
+    },
+    {
+        "label": "create_keyboard",
+        "kind": 2,
+        "importPath": "handlers.handlers_search",
+        "description": "handlers.handlers_search",
+        "peekOfCode": "def create_keyboard(items, selected_items, prefix, continue_callback, skip_callback=None):\n    keyboard = []\n    for item_name, item_id in items:\n        text = f\"✓ {item_name}\" if item_id in selected_items else f\"▫ {item_name}\"\n        callback_data = f\"{prefix}|{item_id}|{'remove' if item_id in selected_items else 'add'}\"\n        keyboard.append([InlineKeyboardButton(text=text, callback_data=callback_data)])\n    keyboard.append([InlineKeyboardButton(text=\"🔙 Назад\", callback_data=\"go_back\")])\n    keyboard.append([InlineKeyboardButton(text=\"Продолжить\", callback_data=continue_callback)])\n    if skip_callback:\n        keyboard.append([InlineKeyboardButton(text=\"Пропустить\", callback_data=skip_callback)])",
+        "detail": "handlers.handlers_search",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "handlers.handlers_search",
+        "description": "handlers.handlers_search",
+        "peekOfCode": "router = Router()\ndb = Database(db_config)\nclass PropertyFilter(StatesGroup):\n    choosing_type = State()\n    choosing_district = State()\n    choosing_beds = State()\n    choosing_baths = State()\n    choosing_price = State()\n    showing_results = State()\nasync def ensure_db_connection():",
+        "detail": "handlers.handlers_search",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "handlers.handlers_search",
+        "description": "handlers.handlers_search",
+        "peekOfCode": "db = Database(db_config)\nclass PropertyFilter(StatesGroup):\n    choosing_type = State()\n    choosing_district = State()\n    choosing_beds = State()\n    choosing_baths = State()\n    choosing_price = State()\n    showing_results = State()\nasync def ensure_db_connection():\n    if db.pool is None:",
+        "detail": "handlers.handlers_search",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "handlers.handlers_start",
+        "description": "handlers.handlers_start",
+        "peekOfCode": "router = Router()\ndb = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Database connected successfully.\")\n@router.message(CommandStart())\nasync def send_welcome(message: Message):",
+        "detail": "handlers.handlers_start",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "handlers.handlers_start",
+        "description": "handlers.handlers_start",
+        "peekOfCode": "db = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Database connected successfully.\")\n@router.message(CommandStart())\nasync def send_welcome(message: Message):\n    await ensure_db_connection()",
+        "detail": "handlers.handlers_start",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "handlers.handlers_top_properties",
+        "description": "handlers.handlers_top_properties",
+        "peekOfCode": "router = Router()\ndb = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Database connected successfully.\")\nasync def get_favorites(user_id, offset=0, limit=5):\n    query = \"\"\"",
+        "detail": "handlers.handlers_top_properties",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "handlers.handlers_top_properties",
+        "description": "handlers.handlers_top_properties",
+        "peekOfCode": "db = Database(db_config)\nasync def ensure_db_connection():\n    if db.pool is None:\n        await db.connect()\n        if db.pool is None:\n            raise Exception(\"Failed to connect to the database\")\n        print(\"Database connected successfully.\")\nasync def get_favorites(user_id, offset=0, limit=5):\n    query = \"\"\"\n    SELECT p.*",
+        "detail": "handlers.handlers_top_properties",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logging",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def setup_logging():\n    logger = logging.getLogger()\n    logger.setLevel(logging.INFO)\n    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\n    console_handler = logging.StreamHandler()\n    console_handler.setLevel(logging.INFO)\n    console_handler.setFormatter(formatter)\n    logger.addHandler(console_handler)\n    file_handler = RotatingFileHandler('bot.log', maxBytes=5 * 1024 * 1024, backupCount=2, encoding='utf-8')\n    file_handler.setLevel(logging.INFO)",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "exit_handler",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def exit_handler():\n    loop = asyncio.get_event_loop()\n    loop.run_until_complete(db.disconnect())\n    loop.run_until_complete(notify_admins(\"Bot is shutting down. Please check the system.\"))\n    loop.close()\nif __name__ == \"__main__\":\n    setup_logging()\n    atexit.register(exit_handler)\n    try:\n        asyncio.run(main())",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "db = Database(db_config)\n# Создание бота и диспетчера\nbot = Bot(token=TOKEN)\ndp = Dispatcher()\n# Настройка логирования\ndef setup_logging():\n    logger = logging.getLogger()\n    logger.setLevel(logging.INFO)\n    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\n    console_handler = logging.StreamHandler()",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "bot = Bot(token=TOKEN)\ndp = Dispatcher()\n# Настройка логирования\ndef setup_logging():\n    logger = logging.getLogger()\n    logger.setLevel(logging.INFO)\n    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\n    console_handler = logging.StreamHandler()\n    console_handler.setLevel(logging.INFO)\n    console_handler.setFormatter(formatter)",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "dp",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "dp = Dispatcher()\n# Настройка логирования\ndef setup_logging():\n    logger = logging.getLogger()\n    logger.setLevel(logging.INFO)\n    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\n    console_handler = logging.StreamHandler()\n    console_handler.setLevel(logging.INFO)\n    console_handler.setFormatter(formatter)\n    logger.addHandler(console_handler)",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "TOKEN",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "TOKEN = \"6920884411:AAHATvsgJlcQKtzREu-IgDIv9urc519VZdA\"\ndb_config = {\n    'host': '127.0.0.1',\n    'user': 'root',\n    'password': 'f1s22731S',\n    'db': 'tgdb',\n    'port': 3306\n}\n# db_config = {\n#     'host': '147.45.239.38',",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "db_config = {\n    'host': '127.0.0.1',\n    'user': 'root',\n    'password': 'f1s22731S',\n    'db': 'tgdb',\n    'port': 3306\n}\n# db_config = {\n#     'host': '147.45.239.38',\n#     'user': 'gen_user',",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "ADMINS",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "ADMINS = [575225733, 666173048, 2094468143, 7039035890]  # 666173048, 2094468143, 7039035890",
+        "detail": "config",
+        "documentation": {}
+    }
+]
