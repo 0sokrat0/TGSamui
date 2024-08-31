@@ -6,10 +6,10 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message
 
 import app.keyboards as kb
-from config import db_config, ADMINS
+from config import db_config
 from database.database import Database
 
-router = Router()
+start_router = Router()
 db = Database(db_config)
 
 
@@ -21,25 +21,23 @@ async def ensure_db_connection():
         print("Database connected successfully.")
 
 
-@router.message(CommandStart())
+@start_router.message(CommandStart())
 async def send_welcome(message: Message):
     await ensure_db_connection()
     await db.update_last_activity(message.from_user.id)
     user_id = message.from_user.id
     user_info = await db.get_user_info(user_id)
 
+    welcome_text = (
+        f"<b>Приветствую, {message.from_user.first_name}!</b>\n"
+        "Добро пожаловать в нашего Telegram-бота по поиску недвижимости на острове <u><b>Самуи</b></u>! 🌴🏠\n\n"
+        "<b>Я могу помочь вам найти идеальное место для вашего отдыха или проживания на этом прекрасном острове.</b>\n\n"
+    )
+
     if user_info:
         phone_number_index = 3
         if user_info[phone_number_index]:
-            welcome_text = (
-                f"<b>Приветствую, {message.from_user.first_name}!</b>\n"
-                "Добро пожаловать в нашего Telegram-бота по поиску недвижимости на острове <u><b>Самуи</b></u>! 🌴🏠\n\n"
-                "<b>Я могу помочь вам найти идеальное место для вашего отдыха или проживания на этом прекрасном острове.</b>\n\n"
-            )
-            if user_id in ADMINS:
-                await message.answer(welcome_text, reply_markup=kb.admin_main, parse_mode=ParseMode.HTML)
-            else:
-                await message.answer(welcome_text, reply_markup=kb.main, parse_mode=ParseMode.HTML)
+            await message.answer(welcome_text, reply_markup=kb.main, parse_mode=ParseMode.HTML)
         else:
             await message.answer('Пожалуйста, предоставьте ваш номер телефона.', reply_markup=kb.numbers)
     else:
@@ -47,11 +45,10 @@ async def send_welcome(message: Message):
         await message.answer('Регистрация...')
         await message.answer('Пожалуйста, нажмите на кнопку ниже, чтобы отправить ваш номер телефона.',
                              reply_markup=kb.numbers)
-        await message.answer('Вы успешно зарегистрированы. Добро пожаловать!',
-                             reply_markup=kb.main if user_id not in ADMINS else kb.admin_main)
+        await message.answer('Вы успешно зарегистрированы. Добро пожаловать!', reply_markup=kb.main)
 
 
-@router.message(F.contact)
+@start_router.message(F.contact)
 async def handle_contact(message: Message):
     telegram_id = message.from_user.id
     phone_number = message.contact.phone_number

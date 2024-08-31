@@ -12,8 +12,9 @@ from aiogram_dialog import setup_dialogs
 
 from config import TOKEN, db_config, ADMINS
 from database.database import Database
-from handlers import handlers_start, handlers_favorites, handlers_notifications, handlers_search, handlers_profile, \
+from handlers import handlers_start, handlers_favorites, handlers_search, handlers_profile, \
     handlers_top_properties
+from handlers.handlers_start import start_router
 
 # Создание экземпляра базы данных
 db = Database(db_config)
@@ -126,12 +127,11 @@ async def on_shutdown(dispatcher: Dispatcher):
 
 async def main():
     dp.include_routers(handlers_top_properties.router,
-                       handlers_start.router,
                        handlers_favorites.router,
-                       handlers_notifications.router,
                        handlers_search.router,
                        handlers_profile.router
                        )
+    dp.include_router(start_router)
     setup_dialogs(dp)
 
     dp.startup.register(on_startup)

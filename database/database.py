@@ -152,3 +152,4 @@ class Database:
             'active_users': active_users[0],
             'new_users': new_users[0]
         }
+
